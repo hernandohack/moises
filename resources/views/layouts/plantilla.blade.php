@@ -1,547 +1,6 @@
-<!DOCTYPE html>
-<html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface supports-pointerevents" lang="en" style="height: 100%;">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="canonical" href="https://yoursite.com">
-	<link rel="shortcut icon" href="./assets/images/fav.png" type="image/png">
+@extends('layouts.base')
 
-    <title>Megastore HTML</title>
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Megastore HTML">
-    <meta property="og:url" content="https://yoursite.com">
-    <meta property="og:description" content="Responsive HTML Template">
-    <meta property="og:site_name" content="Responsive HTML Template">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Megastore HTML">
-    <meta name="twitter:description" content="">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-
-    <!-- CSS ================================================== -->
-    <link href="{{asset('assets/css/owl.carousel.min.css')}}" rel="stylesheet" type="text/css" media="all">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-    <link href="{{asset('assets/css/timber.scss.css')}}" rel="stylesheet" type="text/css" media="all">
-    <link href="{{asset('assets/css/theme.scss.css')}}" rel="stylesheet" type="text/css" media="all">
-    <link href="{{asset('assets/css/themepunch.revolution.css')}}" rel="stylesheet" type="text/css" media="all">
-    <link href="{{asset('assets/css/megastore.scss.css')}}" rel="stylesheet" type="text/css" media="all">
-    <link href="{{asset('assets/css/slick.css')}}" rel="stylesheet" type="text/css" media="all">
-    <link href="{{asset('assets/css/rating.css')}}" rel="stylesheet" type="text/css" media="all">
-
-    <!-- JS ================================================== -->
-    <script src="./assets/js/jquery.min.js"></script>
-    <script src="./assets/js/jquery-ui.min.js"></script>
-    <script src="./assets/js/jquery.fancybox.min.js" defer=""></script>
-    <script src="./assets/js/modernizr.min.js"></script>
-    <script src="./assets/js/jquery.easytabs.min.js"></script>
-    <script src="./assets/js/jquery-shuffle.js"></script>
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/jquery.themepunch.plugins.min.js"></script>
-    <script src="./assets/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="./assets/js/jquery.countdown.plugins.js" type="text/javascript"></script>
-    <script src="./assets/js/jquery.countdown.js" type="text/javascript"></script>
-    <script src="./assets/js/slick.min.js" type="text/javascript"></script>
-    <script src="./assets/js/jquery.elevateZoom-3.0.8.min.js" type="text/javascript"></script>
-    <script src="./assets/js/tada.js"></script>
-
-
-  </head>
-
-<body id="megastore-red" class="megastore template-index" style="position: relative; min-height: 100%; top: 0px;">
-	<div id="CartDrawer" class="drawer drawer--right drawer--has-fixed-footer" tabindex="-1">
-		<div class="drawer__fixed-header">
-			<div class="drawer__header">
-				<div class="drawer__title">Your cart</div>
-				<div class="drawer__close">
-					<button type="button" class="icon-fallback-text drawer__close-button js-drawer-close">
-						<span class="icon icon-x" aria-hidden="true"></span>
-						<span class="fallback-text">Close Cart</span>
-					</button>
-				</div>
-			</div>
-		</div>
-		<div class="drawer__inner">
-			<div id="CartContainer" class="drawer__cart">
-				<form action="./cart.html" method="post" novalidate="" class="cart ajaxcart">
-					<div class="ajaxcart__inner ajaxcart__inner--has-fixed-footer">
-						<div class="ajaxcart__product">
-							<div class="ajaxcart__row" data-line="1">
-								<div class="grid">
-									<div class="grid__item one-quarter">
-										<a href="./product.html" class="ajaxcart__product-image">
-											<img src="./assets/images/cart1.png" alt="Raesent Scelerisque Dan">
-										</a>
-									</div>
-									<div class="grid__item three-quarters">
-										<div class="ajaxcart__product-name--wrapper">
-											<a href="./product.html" class="ajaxcart__product-name">Raesent Scelerisque Dan</a>
-											<span class="ajaxcart__product-meta">XS / Red</span>
-										</div>
-										<div class="grid--full display-table">
-											<div class="grid__item display-table-cell one-half">
-												<div class="ajaxcart__qty">
-													<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-qty="0" data-line="1">
-														<span class="icon icon-minus" aria-hidden="true"></span>
-														<span class="fallback-text" aria-hidden="true">−</span>
-													</button>
-													<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" data-line="1" aria-label="quantity" pattern="[0-9]*">
-													<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-line="1" data-qty="2">
-														<span class="icon icon-plus" aria-hidden="true"></span>
-														<span class="fallback-text" aria-hidden="true">+</span>
-													</button>
-												</div>
-											</div>
-											<div class="grid__item display-table-cell one-half text-right">
-												<span class="ajaxcart__price">
-													<span class="money">$60.00 USD</span>
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="ajaxcart__product">
-							<div class="ajaxcart__row" data-line="2">
-								<div class="grid">
-									<div class="grid__item one-quarter">
-										<a href="./product.html" class="ajaxcart__product-image">
-											<img src="./assets/images/cart2.png" alt="Reprehenderit qui in ea">
-										</a>
-									</div>
-									<div class="grid__item three-quarters">
-										<div class="ajaxcart__product-name--wrapper">
-											<a href="./product.html" class="ajaxcart__product-name">Reprehenderit qui in ea</a>
-											<span class="ajaxcart__product-meta">Lithograph / Green</span>
-										</div>
-										<div class="grid--full display-table">
-											<div class="grid__item display-table-cell one-half">
-												<div class="ajaxcart__qty">
-													<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-qty="0" data-line="2">
-														<span class="icon icon-minus" aria-hidden="true"></span>
-														<span class="fallback-text" aria-hidden="true">−</span>
-													</button>
-													<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" data-line="2" aria-label="quantity" pattern="[0-9]*">
-													<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-line="2" data-qty="2">
-														<span class="icon icon-plus" aria-hidden="true"></span>
-														<span class="fallback-text" aria-hidden="true">+</span>
-													</button>
-												</div>
-											</div>
-											<div class="grid__item display-table-cell one-half text-right">
-												<span class="ajaxcart__price">
-													<span class="money">$25.00 USD</span>
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="ajaxcart__product">
-							<div class="ajaxcart__row" data-line="3">
-								<div class="grid">
-									<div class="grid__item one-quarter">
-										<a href="./product.html" class="ajaxcart__product-image">
-											<img src="./assets/images/cart3.png" alt="Etiam lobortis purus dictum">
-										</a>
-									</div>
-									<div class="grid__item three-quarters">
-										<div class="ajaxcart__product-name--wrapper">
-											<a href="./product.html" class="ajaxcart__product-name">Etiam lobortis purus dictum</a>
-											<span class="ajaxcart__product-meta">Large</span>
-										</div>
-										<div class="grid--full display-table">
-											<div class="grid__item display-table-cell one-half">
-												<div class="ajaxcart__qty">
-													<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-qty="0" data-line="3">
-														<span class="icon icon-minus" aria-hidden="true"></span>
-														<span class="fallback-text" aria-hidden="true">−</span>
-													</button>
-													<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" data-line="3" aria-label="quantity" pattern="[0-9]*">
-													<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-line="3" data-qty="2">
-														<span class="icon icon-plus" aria-hidden="true"></span>
-														<span class="fallback-text" aria-hidden="true">+</span>
-													</button>
-												</div>
-											</div>
-											<div class="grid__item display-table-cell one-half text-right">
-												<span class="ajaxcart__price">
-													<span class="money">$25.00 USD</span>
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="ajaxcart__product">
-							<div class="ajaxcart__row" data-line="4">
-								<div class="grid">
-									<div class="grid__item one-quarter">
-										<a href="./product.html" class="ajaxcart__product-image">
-											<img src="./assets/images/cart4.png" alt="Raesent Scelerisque Dan">
-										</a>
-									</div>
-									<div class="grid__item three-quarters">
-										<div class="ajaxcart__product-name--wrapper">
-											<a href="./product.html" class="ajaxcart__product-name">Raesent Scelerisque Dan</a>
-											<span class="ajaxcart__product-meta">XS / Red</span>
-										</div>
-
-										<div class="grid--full display-table">
-											<div class="grid__item display-table-cell one-half">
-												<div class="ajaxcart__qty">
-													<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-qty="0" data-line="4">
-														<span class="icon icon-minus" aria-hidden="true"></span>
-														<span class="fallback-text" aria-hidden="true">−</span>
-													</button>
-													<input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" data-line="4" aria-label="quantity" pattern="[0-9]*">
-													<button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-line="4" data-qty="2">
-														<span class="icon icon-plus" aria-hidden="true"></span>
-														<span class="fallback-text" aria-hidden="true">+</span>
-													</button>
-												</div>
-											</div>
-											<div class="grid__item display-table-cell one-half text-right">
-												<span class="ajaxcart__price">
-													<span class="money">$78.00 USD</span>
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<div class="ajaxcart__footer ajaxcart__footer--fixed">
-						<div class="grid--full">
-							<div class="grid__item two-thirds">
-								<p class="ajaxcart__subtotal">Subtotal</p>
-							</div>
-							<div class="grid__item one-third text-right">
-								<p class="ajaxcart__subtotal"><span class="money">$188.00 USD</span></p>
-							</div>
-						</div>
-						<p class="ajaxcart__note text-center">Shipping, taxes, and discounts calculated at checkout.</p>
-						<a href="./cart.html" class="btn--secondary btn--full cart__checkout" style="margin-bottom:10px;">
-							Shopping Cart <span class="icon icon-arrow-right" aria-hidden="true"></span>
-						</a>
-						<button type="submit" class="btn--secondary btn--full cart__checkout" name="checkout">
-							Check Out <span class="icon icon-arrow-right" aria-hidden="true"></span>
-						</button>
-					</div>
-				</form>
-
-			</div>
-		</div>
-	</div>
-
-    <div id="PageContainer" class="is-moved-by-drawer">
-		<header class="">
-			<div id="html-section-header" class="html-section">
-				<div class="topheader small--hide">
-					<div class="wrapper">
-						<div class="left-area">
-							<div class="site-nav__item nav-language medium-down--hide">
-								<div class="switcher notranslate">
-									<div class="selected lang-switcher">
-										<a href="./index.html"><img src="./assets/images/en.png" height="16" width="16" alt="en"> English</a>
-									</div>
-									<div class="option">
-										<a href="./index.html" title="English" class="lang-sub selected"><img src="./assets/images/en.png" height="16" width="16" alt="en"> English</a>
-										<a href="./index.html" title="French" class="lang-sub"><img src="./assets/images/fr.png" height="16" width="16" alt="fr"> French</a>
-										<a href="./index.html" title="German" class="lang-sub"><img src="./assets/images/de.png" height="16" width="16" alt="de"> German</a>
-										<a href="./index.html" title="Italian" class="lang-sub"><img src="./assets/images/it.png" height="16" width="16" alt="it"> Italian</a>
-										<a href="./index.html" title="Russian" class="lang-sub"><img src="./assets/images/ru.png" height="16" width="16" alt="ru"> Russian</a>
-										<a href="./index.html" title="Spanish" class="lang-sub"><img src="./assets/images/es.png" height="16" width="16" alt="es"> Spanish</a>
-									</div>
-								</div>
-							</div>
-							<div class="site-nav__item nav-currency medium-down--hide">
-							    <div class="switcher notranslate">
-									<div class="selected currency-switcher">
-										<a href="./index.html"><img src="./assets/images/usd.png" height="16" width="16" alt="en"> US Dollar</a>
-									</div>
-									<div class="option">
-										<a href="./index.html" title="English" class="curr-sub selected"><img src="./assets/images/usd.png" height="16" width="16" alt="en"> USD</a>
-										<a href="./index.html" title="French" class="curr-sub"><img src="./assets/images/euro.png" height="16" width="16" alt="en"> Euro</a>
-										<a href="./index.html" title="German" class="curr-sub"><img src="./assets/images/pound.png" height="16" width="16" alt="en"> Pound</a>
-										<a href="./index.html" title="Italian" class="curr-sub"><img src="./assets/images/yen.png" height="16" width="16" alt="en"> Yen</a>
-									</div>
-								</div>
-							</div>
-							<div class="site-nav__item nav-qrcode">
-								<div class="qrcode-title">
-									<a class=" js-app-modal" data-mfp-src="#AppModal">
-										Shop in App
-									</a>
-								</div>
-							</div>
-							<div id="AppModal" class="mfp-hide" style="max-width: 500px;margin: 0 auto;">
-								<div class="ios-area">
-									<div class="qrimg-ios">
-										<a href="#"><img src="./assets/images/QR_Code_Tadatheme.png" alt=""></a>
-									</div>
-									<div class="qropt-ios"><img src="./assets/images/apple-store.png" alt=""></div>
-								</div>
-								<div class="ios-area">
-									<div class="qrimg-android">
-										<a href="#"><img src="./assets/images/QR_Code_Megastore.png" alt="Image Column"></a>
-									</div>
-									<div class="qropt-android"><img src="./assets/images/google-play.png" alt=""></div>
-								</div>
-								<button title="Close (Esc)" type="button" class="mfp-close">×</button>
-							</div>
-
-							<div class="social-icons">
-								<div class="social-title">
-									<a class=" js-social-modal" data-mfp-src="#SocialModal">
-										Connect with us
-									</a>
-								</div>
-								<div id="SocialModal" class="mfp-hide" style="max-width: 500px;margin: 0 auto;">
-									<div class="inline-list social-icons">
-										<a href="#" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a>
-										<a href="#" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a>
-										<a href="#" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus"></i></a>
-										<a href="#" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest"></i></a>
-										<a href="#" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube"></i></a>
-										<a href="#" title="Instagram" class="icon-social instagram" data-toggle="tooltip" data-placement="top"><i class="fa fa-instagram"></i></a>
-										<a href="#" title="translation missing: en.layout.footer.news" class="icon-social atom" data-toggle="tooltip" data-placement="top"><i class="fa fa-share-alt"></i></a>
-										<a href="#" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo"></i></a>
-										<a href="#" title="Tumblr" class="icon-social tumblr" data-toggle="tooltip" data-placement="top"><i class="fa fa-tumblr"></i></a>
-									</div>
-									<button title="Close (Esc)" type="button" class="mfp-close">×</button>
-								</div>
-							</div>
-						</div>
-						<div class="right-area">
-							<ul>
-								<li class="shopguide-link site-nav__item medium-down--hide">
-									<a href="./page-contact.html">Contact Us</a>
-								</li>
-								<li class="customer-link site-nav__item">
-									<a class="site-nav__link site-nav__link--icon js-login-modal" data-mfp-src="#LoginModal">
-										<i class="icon-customer" aria-hidden="true"></i>
-										<span class="text">My Account</span>
-									</a>
-									<div id="LoginModal" class="mfp-hide" style="max-width: 500px;margin: 0 auto;">
-										<div id="loginBox" class="loginLightbox">
-											<div id="lightboxlogin">
-												<form method="post" action="./account-login.html" id="customer_login" accept-charset="UTF-8">
-													<input type="hidden" name="form_type" value="customer_login" />
-													<input type="hidden" name="utf8" value="✓" />
-													<div id="bodyBox">
-														<h3>Login</h3>
-														<label for="CustomerEmail" class="hidden-label">Email</label>
-														<input type="email" name="customer[email]" id="CustomerEmail" class="input-full" placeholder="Email">
-
-														<label for="CustomerPassword" class="hidden-label">Password</label>
-														<input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full" placeholder="Password">
-
-														<input type="submit" class="btn btn2 btn--full" value="Sign In">
-														<div>
-															<p class="forgot"><a href="#recover" onclick="showRecoverPasswordForm();return false;" id="RecoverPassword">Forgot your password?</a></p>
-															<p class="create"><a href="#create_accountBox" onclick="showCreateAccountForm();return false;" id="CreateAccountPassword">Create Account</a></p>
-														</div>
-													</div>
-												</form>
-											</div>
-											<div id="recover-password" style="display:none;">
-												<h3>Reset your password</h3>
-												<p class="note">We will send you an email to reset your password.</p>
-												<form method="post" action="/account/recover" accept-charset="UTF-8">
-													<input type="hidden" name="form_type" value="recover_customer_password" />
-													<input type="hidden" name="utf8" value="✓" />
-													<p>
-														<label for="recover-email" class="label">Email</label>
-													</p>
-													<input type="email" value="" size="30" name="email" id="recover-email" class="text" />
-													<div class="action_bottom">
-														<p>
-															<input class="btn btn2" type="submit" value="Submit" />
-														</p>
-														<p>
-														<a class="btn--secondary back btn--full" href="#" onclick="hideRecoverPasswordForm();return false;">Cancel</a>
-														</p>
-													</div>
-												</form>
-											</div>
-											<div id="create_accountBox" style="display:none;">
-												<h3>Register</h3>
-												<div class="form-vertical">
-													<form method="post" action="/account" id="create_customer" accept-charset="UTF-8">
-														<input type="hidden" name="form_type" value="create_customer" />
-														<input type="hidden" name="utf8" value="✓" />
-														<label for="FirstName" class="hidden-label">First Name</label>
-														<input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="First Name">
-														<label for="LastName" class="hidden-label">Last Name</label>
-														<input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="Last Name">
-														<label for="Email" class="hidden-label">Email</label>
-														<input type="email" name="customer[email]" id="Email2" class="input-full" placeholder="Email">
-														<label for="CreatePassword" class="hidden-label">Password</label>
-														<input type="password" name="customer[password]" id="CreatePassword" class="input-full" placeholder="Password">
-														<p>
-															<input type="submit" value="Create" class="btn btn2 btn--full">
-														</p>
-														<p><span><a class="btn--secondary btn--full" href="#" onclick="hideRecoverPasswordForm();return false;">Cancel</a></span></p>
-													</form>
-												</div>
-											</div>
-											<script>
-												function showRecoverPasswordForm() {
-													$('#recover-password').css("display", 'block');
-													$('#lightboxlogin').css("display", 'none');
-													$('#create_accountBox').css("display", 'none');
-												}
-
-												function hideRecoverPasswordForm() {
-													$('#recover-password').css("display", 'none');
-													$('#lightboxlogin').css("display", 'block');
-													$('#create_accountBox').css("display", 'none');
-												}
-
-												function showCreateAccountForm() {
-													$('#recover-password').css("display", 'none');
-													$('#lightboxlogin').css("display", 'none');
-													$('#create_accountBox').css("display", 'block');
-												}
-											</script>
-										</div>
-										<button title="Close (Esc)" type="button" class="mfp-close">×</button>
-									</div>
-								</li>
-								<li class="site-nav__item compare_link">
-									<a href="./page-compare.html"><i class="fa fa-refresh" aria-hidden="true" title="Compare"></i></a>
-								</li>
-								<li class="site-nav__item wishlist_link">
-									<a href="./page-wishlist.html"><i class="fa fa-heart-o" aria-hidden="true" title="Wishlist"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<div data-section-id="header" data-section-type="header-section" class="header-section">
-					<div class="header-wrapper header-wrapper--over-hero">
-						<div class="wrapper main-header-wrapper">
-							<div class="grid--full grid--table">
-								<!-- Mobile Button -->
-								<div class="grid__item large--hide medium-down--one-quarter small--one-quarter nav-mobile">
-									<div>
-										<button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left site-mobileNav-bar">
-											<span class="icon icon-hamburger" aria-hidden="true"></span>
-											<span class="fallback-text">Site navigation</span>
-										</button>
-									</div>
-								</div>
-								<!-- Mobile Logo -->
-								<div class="grid__item large--hide medium-down--two-quarters small--two-quarters logo-mobile">
-									<a href="./index.html" class="site-header__logo-image">
-										<img src="./assets/images/logo.png" alt="">
-									</a>
-								</div>
-								<!-- Mobile Cart -->
-								<div class="grid__item large--hide medium-down--one-quarter small--one-quarter cart-mobile">
-									<div class="text-right">
-										<a href="./cart.html" class="site-nav__link cart-link js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-											<span class="icon-fallback-text">
-												<span class="icon icon-cart" aria-hidden="true"></span>
-												<span class="fallback-text">Shopping Cart</span>
-											</span>
-											<span class="cart-link__bubble"></span>
-										</a>
-									</div>
-								</div>
-								<div class="mobileNav-search large--hide medium-down--one-whole small--one-whole">
-									<form action="./search.html" method="get" class="input-group search-bar search-bar--drawer" role="search" style="position: relative;">
-										<input type="search" name="q" value="" placeholder="Search something" class="input-group-field" aria-label="Search something" autocomplete="off">
-										<span class="input-group-btn">
-											<button type="submit" class="btn--secondary icon-fallback-text">
-												<i class="icon-search" aria-hidden="true"></i>
-												<span class="fallback-text">Search</span>
-											</button>
-										</span>
-									</form>
-								</div>
-
-								<!-- Desktop Header -->
-								<div class="grid__item large--show medium-down--hide smal--hide">
-									<div class="wrapper-middle">
-										<!-- Logo -->
-										<div class="grid__item large--three-tenths logo-wrapper">
-											<a href="./index.html" class="site-header__logo-image">
-												<img src="./assets/images/logo.png" alt="">
-											</a>
-										</div>
-
-										<!-- Search Box -->
-										<div class="grid__item header-search large--five-tenths small--hide">
-											<div class="header-search-inner">
-												<form action="./search.html" method="get" class="input-group search-bar " role="search" style="position: relative;">
-													<input type="hidden" name="type" value="product">
-													<input type="search" name="q" value="" placeholder="Search something" class="input-group-field" aria-label="Search something" autocomplete="off">
-													<span class="input-group-btn">
-														<button type="submit" class=" icon-fallback-text">
-															<i class="icon-search" aria-hidden="true"></i>
-															<span class="fallback-text">Search</span>
-														</button>
-													</span>
-													<ul class="search-results" style="position: absolute; left: 0px; top: 40px; display: none;"></ul>
-												</form>
-												<div class="header-search-suggestion">
-													<ul class="grid__link">
-														<li>
-															<a href="./collection.html"><span>samsung</span></a>
-														</li>
-														<li>
-															<a href="./collection.html"><span>bosch</span></a>
-														</li>
-														<li>
-															<a href="./collection.html"><span>kingston</span></a>
-														</li>
-														<li>
-															<a href="./collection.html"><span>ensure gold</span></a>
-														</li>
-														<li>
-															<a href="./collection.html"><span>converse</span></a>
-														</li>
-													</ul>
-												</div>
-
-											</div>
-										</div>
-
-										<!-- Cart -->
-										<div class="grid__item header-cart large--two-tenths small--hide">
-											<div class="cart-link site-nav__item">
-												<a href="./cart.html" class="site-nav__link site-nav__link--icon cart-link js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-													<div class="icon-fallback-text">
-														<div class="left-block">
-															<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-															<span class="cart-link__bubble">4</span>
-														</div>
-														<div class="right-block">
-															<div class="text1">Shopping Cart</div>
-														</div>
-													</div>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+@section('body')
 		<nav class="menu-navigation">
 			<div class="navigation-bar menu-bar">
 				<div class="wrapper wrapper-allcoll">
@@ -555,7 +14,7 @@
 												<span>Home</span>
 											</a>
 										</li>
-										<li class="site-nav__item site-nav__expanded-item site-nav--has-dropdown dropdown navigation desknav mega-menu" aria-haspopup="true">
+										{{-- <li class="site-nav__item site-nav__expanded-item site-nav--has-dropdown dropdown navigation desknav mega-menu" aria-haspopup="true">
 											<a href="./collection.html" class="site-nav__link">
 												<span>Collections</span>
 												<span class="icon icon-arrow-down" aria-hidden="true"></span>
@@ -1195,10 +654,10 @@
 													</ul>
 												</li>
 												<li class="site-nav__item column-image grid__item small--one-whole medium-up--one-third one-fifth">
-													<a href="./collection.html"><img src="./assets/images/mega-img1.png" alt=""></a>
+													<a href="#"><img src="./assets/images/mega-img1.png" alt=""></a>
 												</li>
 												<li class="site-nav__item column-image grid__item small--one-whole medium-up--one-third one-fifth">
-													<a href="./collection.html"><img src="./assets/images/mega-img2.png" alt=""></a>
+													<a href="#"><img src="./assets/images/mega-img2.png" alt=""></a>
 												</li>
 											</ul>
 										</li>
@@ -1254,7 +713,7 @@
 													</a>
 												</li>
 											</ul>
-										</li>
+										</li> --}}
 										<li class="site-nav__item site-nav__expanded-item " data-url="/pages/contact-us">
 											<a href="./page-contact.html" class="site-nav__link">
 												<span>Contact Us</span>
@@ -1958,10 +1417,10 @@
 															</ul>
 														</li>
 														<li class="mobile-nav__item column-image grid__item small--one-whole medium-up--one-third one-fifth">
-															<a href="./collection.html"><img src="./assets/images/mega-img1.png" alt=""></a>
+															<a href="#"><img src="./assets/images/mega-img1.png" alt=""></a>
 														</li>
 														<li class="mobile-nav__item column-image grid__item small--one-whole medium-up--one-third one-fifth">
-															<a href="./collection.html"><img src="./assets/images/mega-img1.png" alt=""></a>
+															<a href="#"><img src="./assets/images/mega-img1.png" alt=""></a>
 														</li>
 													</ul>
 												</li>
@@ -2120,12 +1579,12 @@
 													<ul>
 														<li class="site-nav__heading">Hot Categories</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Dresses</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Jackets &amp; Coats</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Sweaters</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Jeans</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Suits &amp; Sets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Blouses &amp; Shirts</a></li></ul>
+															<li class="site-nav__link"><a href="#">Dresses</a></li>
+															<li class="site-nav__link"><a href="#">Jackets &amp; Coats</a></li>
+															<li class="site-nav__link"><a href="#">Sweaters</a></li>
+															<li class="site-nav__link"><a href="#">Jeans</a></li>
+															<li class="site-nav__link"><a href="#">Suits &amp; Sets</a></li>
+															<li class="site-nav__link"><a href="#">Blouses &amp; Shirts</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2133,18 +1592,18 @@
 													<ul>
 														<li class="site-nav__heading">Bottoms</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Skirts</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Leggings</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Jeans</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Pants &amp; Capris</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Wide Leg Pants</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Shorts</a></li></ul>
+															<li class="site-nav__link"><a href="#">Skirts</a></li>
+															<li class="site-nav__link"><a href="#">Leggings</a></li>
+															<li class="site-nav__link"><a href="#">Jeans</a></li>
+															<li class="site-nav__link"><a href="#">Pants &amp; Capris</a></li>
+															<li class="site-nav__link"><a href="#">Wide Leg Pants</a></li>
+															<li class="site-nav__link"><a href="#">Shorts</a></li></ul>
 														</li>
 													</ul>
 												</div>
 												<div class="row-3">
 													<div class="box-border">
-														<div class="site-nav__text"><a href="./collection.html">New arrival plus size</a></div>
+														<div class="site-nav__text"><a href="#">New arrival plus size</a></div>
 														<div class="site-nav__banner">
 															<a href="./product.html"><img src="./assets/images/product1.png" alt=""></a>
 														</div>
@@ -2156,12 +1615,12 @@
 													<ul>
 														<li class="site-nav__heading">Outwear &amp; Jackets</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Basic Jackets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Real Fur</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Down Coats</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Blazers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Trench</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Parkas</a></li></ul>
+															<li class="site-nav__link"><a href="#">Basic Jackets</a></li>
+															<li class="site-nav__link"><a href="#">Real Fur</a></li>
+															<li class="site-nav__link"><a href="#">Down Coats</a></li>
+															<li class="site-nav__link"><a href="#">Blazers</a></li>
+															<li class="site-nav__link"><a href="#">Trench</a></li>
+															<li class="site-nav__link"><a href="#">Parkas</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2169,18 +1628,18 @@
 													<ul>
 														<li class="site-nav__heading">Tops &amp; Sets</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Tank Tops</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Suits &amp; Sets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Jumpsuits</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Rompers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Intimates</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Sleep &amp; Lounge</a></li></ul>
+															<li class="site-nav__link"><a href="#">Tank Tops</a></li>
+															<li class="site-nav__link"><a href="#">Suits &amp; Sets</a></li>
+															<li class="site-nav__link"><a href="#">Jumpsuits</a></li>
+															<li class="site-nav__link"><a href="#">Rompers</a></li>
+															<li class="site-nav__link"><a href="#">Intimates</a></li>
+															<li class="site-nav__link"><a href="#">Sleep &amp; Lounge</a></li></ul>
 														</li>
 													</ul>
 												</div>
 												<div class="row-3">
 													<div class="box-border">
-														<div class="site-nav__text"><a href="./collection.html">Sweater Collection</a></div>
+														<div class="site-nav__text"><a href="#">Sweater Collection</a></div>
 														<div class="site-nav__banner">
 															<a href="./product.html"><img src="assets/images/product2.png" alt=""></a>
 														</div>
@@ -2192,12 +1651,12 @@
 													<ul>
 														<li class="site-nav__heading">Weddings &amp; Events</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Wedding Dresses</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Evening Dresses</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Prom Dresses</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Bridesmaid Dresses</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Flower Girl Dresses</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Cocktail Dresses</a></li></ul>
+															<li class="site-nav__link"><a href="#">Wedding Dresses</a></li>
+															<li class="site-nav__link"><a href="#">Evening Dresses</a></li>
+															<li class="site-nav__link"><a href="#">Prom Dresses</a></li>
+															<li class="site-nav__link"><a href="#">Bridesmaid Dresses</a></li>
+															<li class="site-nav__link"><a href="#">Flower Girl Dresses</a></li>
+															<li class="site-nav__link"><a href="#">Cocktail Dresses</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2205,12 +1664,12 @@
 													<ul>
 														<li class="site-nav__heading">Accessories</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Eyewear &amp; Accessories</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Hats &amp; Caps</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Belts &amp; Cummerbunds</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Scarves &amp; Wraps</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Gloves &amp; Mittens</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Prescription Glasses</a></li></ul>
+															<li class="site-nav__link"><a href="#">Eyewear &amp; Accessories</a></li>
+															<li class="site-nav__link"><a href="#">Hats &amp; Caps</a></li>
+															<li class="site-nav__link"><a href="#">Belts &amp; Cummerbunds</a></li>
+															<li class="site-nav__link"><a href="#">Scarves &amp; Wraps</a></li>
+															<li class="site-nav__link"><a href="#">Gloves &amp; Mittens</a></li>
+															<li class="site-nav__link"><a href="#">Prescription Glasses</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2239,12 +1698,12 @@
 													<ul>
 														<li class="site-nav__heading">Hot Sale</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Hoodies &amp; Sweatshirts</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Jackets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">T-Shirts</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Shirts</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Sweaters</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Socks</a></li></ul>
+															<li class="site-nav__link"><a href="#">Hoodies &amp; Sweatshirts</a></li>
+															<li class="site-nav__link"><a href="#">Jackets</a></li>
+															<li class="site-nav__link"><a href="#">T-Shirts</a></li>
+															<li class="site-nav__link"><a href="#">Shirts</a></li>
+															<li class="site-nav__link"><a href="#">Sweaters</a></li>
+															<li class="site-nav__link"><a href="#">Socks</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2252,12 +1711,12 @@
 													<ul>
 														<li class="site-nav__heading">Bottoms</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Skirts</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Leggings</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Jeans</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Pants &amp; Capris</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Wide Leg Pants</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Shorts</a></li></ul>
+															<li class="site-nav__link"><a href="#">Skirts</a></li>
+															<li class="site-nav__link"><a href="#">Leggings</a></li>
+															<li class="site-nav__link"><a href="#">Jeans</a></li>
+															<li class="site-nav__link"><a href="#">Pants &amp; Capris</a></li>
+															<li class="site-nav__link"><a href="#">Wide Leg Pants</a></li>
+															<li class="site-nav__link"><a href="#">Shorts</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2275,12 +1734,12 @@
 													<ul>
 														<li class="site-nav__heading">Underwear &amp; Loungewear</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Boxers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Briefs</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Long Johns</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Men's Sleep &amp; Lounge</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Pajama Sets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Robes</a></li></ul>
+															<li class="site-nav__link"><a href="#">Boxers</a></li>
+															<li class="site-nav__link"><a href="#">Briefs</a></li>
+															<li class="site-nav__link"><a href="#">Long Johns</a></li>
+															<li class="site-nav__link"><a href="#">Men's Sleep &amp; Lounge</a></li>
+															<li class="site-nav__link"><a href="#">Pajama Sets</a></li>
+															<li class="site-nav__link"><a href="#">Robes</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2288,12 +1747,12 @@
 													<ul>
 														<li class="site-nav__heading">Outwear &amp; Jackets</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Basic Jackets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Real Fur</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Down Coats</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Blazers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Trench</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Parkas</a></li></ul>
+															<li class="site-nav__link"><a href="#">Basic Jackets</a></li>
+															<li class="site-nav__link"><a href="#">Real Fur</a></li>
+															<li class="site-nav__link"><a href="#">Down Coats</a></li>
+															<li class="site-nav__link"><a href="#">Blazers</a></li>
+															<li class="site-nav__link"><a href="#">Trench</a></li>
+															<li class="site-nav__link"><a href="#">Parkas</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2311,15 +1770,15 @@
 													<ul>
 														<li class="site-nav__heading">Accessories</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Scarves</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Skullies &amp; Beanies</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Prescription Glasses</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Gloves &amp; Mittens</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Belts</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Bomber Hats</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Fedoras</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Berets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Baseball Caps</a></li></ul>
+															<li class="site-nav__link"><a href="#">Scarves</a></li>
+															<li class="site-nav__link"><a href="#">Skullies &amp; Beanies</a></li>
+															<li class="site-nav__link"><a href="#">Prescription Glasses</a></li>
+															<li class="site-nav__link"><a href="#">Gloves &amp; Mittens</a></li>
+															<li class="site-nav__link"><a href="#">Belts</a></li>
+															<li class="site-nav__link"><a href="#">Bomber Hats</a></li>
+															<li class="site-nav__link"><a href="#">Fedoras</a></li>
+															<li class="site-nav__link"><a href="#">Berets</a></li>
+															<li class="site-nav__link"><a href="#">Baseball Caps</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2327,9 +1786,9 @@
 													<ul>
 														<li class="site-nav__heading">Novelty &amp; Special Use</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Cosplay Costumes</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Stage &amp; Dance Wear</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Exotic Apparel</a></li></ul>
+															<li class="site-nav__link"><a href="#">Cosplay Costumes</a></li>
+															<li class="site-nav__link"><a href="#">Stage &amp; Dance Wear</a></li>
+															<li class="site-nav__link"><a href="#">Exotic Apparel</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2358,12 +1817,12 @@
 													<ul>
 														<li class="site-nav__heading">Mobile Phones</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Octa Core</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Deca Core</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Single SIM Card</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Dual SIM Card</a></li>
-															<li class="site-nav__link"><a href="./collection.html">4GB RAM</a></li>
-															<li class="site-nav__link"><a href="./collection.html">5.5-inch Display</a></li></ul>
+															<li class="site-nav__link"><a href="#">Octa Core</a></li>
+															<li class="site-nav__link"><a href="#">Deca Core</a></li>
+															<li class="site-nav__link"><a href="#">Single SIM Card</a></li>
+															<li class="site-nav__link"><a href="#">Dual SIM Card</a></li>
+															<li class="site-nav__link"><a href="#">4GB RAM</a></li>
+															<li class="site-nav__link"><a href="#">5.5-inch Display</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2371,12 +1830,12 @@
 													<ul>
 														<li class="site-nav__heading">Mobile Phone Parts</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Mobile Phone LCDs</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Mobile Phone Batteries</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Mobile Phone Housings</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Mobile Phone Touch Panel</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Flex Cables</a></li>
-															<li class="site-nav__link"><a href="./collection.html">SIM Card &amp; Tools</a></li></ul>
+															<li class="site-nav__link"><a href="#">Mobile Phone LCDs</a></li>
+															<li class="site-nav__link"><a href="#">Mobile Phone Batteries</a></li>
+															<li class="site-nav__link"><a href="#">Mobile Phone Housings</a></li>
+															<li class="site-nav__link"><a href="#">Mobile Phone Touch Panel</a></li>
+															<li class="site-nav__link"><a href="#">Flex Cables</a></li>
+															<li class="site-nav__link"><a href="#">SIM Card &amp; Tools</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2394,20 +1853,20 @@
 													<ul>
 														<li class="site-nav__heading">Cases &amp; Covers</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Patterned Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Wallet Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Waterproof Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Leather Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Silicone Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Flip Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">iPhone X Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Cases For iPhone 8/8 Plus </a></li>
-															<li class="site-nav__link"><a href="./collection.html">Cases For iPhone 7/7 Plus</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Cases For iPhone 6/6 Plus</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Galaxy S8 Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Galaxy S7 Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Xiaomi Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Huawei Cases</a></li></ul>
+															<li class="site-nav__link"><a href="#">Patterned Cases</a></li>
+															<li class="site-nav__link"><a href="#">Wallet Cases</a></li>
+															<li class="site-nav__link"><a href="#">Waterproof Cases</a></li>
+															<li class="site-nav__link"><a href="#">Leather Cases</a></li>
+															<li class="site-nav__link"><a href="#">Silicone Cases</a></li>
+															<li class="site-nav__link"><a href="#">Flip Cases</a></li>
+															<li class="site-nav__link"><a href="#">iPhone X Cases</a></li>
+															<li class="site-nav__link"><a href="#">Cases For iPhone 8/8 Plus </a></li>
+															<li class="site-nav__link"><a href="#">Cases For iPhone 7/7 Plus</a></li>
+															<li class="site-nav__link"><a href="#">Cases For iPhone 6/6 Plus</a></li>
+															<li class="site-nav__link"><a href="#">Galaxy S8 Cases</a></li>
+															<li class="site-nav__link"><a href="#">Galaxy S7 Cases</a></li>
+															<li class="site-nav__link"><a href="#">Xiaomi Cases</a></li>
+															<li class="site-nav__link"><a href="#">Huawei Cases</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2426,12 +1885,12 @@
 													<ul>
 														<li class="site-nav__heading">Mobile Phone Accessories</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Power Bank</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Screen Protectors</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Mobile Phone Cables</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Mobile Phone Chargers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Holders &amp; Stands</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Mobile Phone Lenses</a></li></ul>
+															<li class="site-nav__link"><a href="#">Power Bank</a></li>
+															<li class="site-nav__link"><a href="#">Screen Protectors</a></li>
+															<li class="site-nav__link"><a href="#">Mobile Phone Cables</a></li>
+															<li class="site-nav__link"><a href="#">Mobile Phone Chargers</a></li>
+															<li class="site-nav__link"><a href="#">Holders &amp; Stands</a></li>
+															<li class="site-nav__link"><a href="#">Mobile Phone Lenses</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2439,12 +1898,12 @@
 													<ul>
 														<li class="site-nav__heading">Hot Categories</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Car Chargers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Quick Chargers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">iPhone Cables</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Type C Cables</a></li>
-															<li class="site-nav__link"><a href="./collection.html">20000mAh Power Bank</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Battery Charger Cases</a></li></ul>
+															<li class="site-nav__link"><a href="#">Car Chargers</a></li>
+															<li class="site-nav__link"><a href="#">Quick Chargers</a></li>
+															<li class="site-nav__link"><a href="#">iPhone Cables</a></li>
+															<li class="site-nav__link"><a href="#">Type C Cables</a></li>
+															<li class="site-nav__link"><a href="#">20000mAh Power Bank</a></li>
+															<li class="site-nav__link"><a href="#">Battery Charger Cases</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2473,11 +1932,11 @@
 													<ul>
 														<li class="site-nav__heading">Laptops</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Gaming Laptops</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Tablets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">2 in 1 Tablets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Phone Call Tablets</a></li>
-															<li class="site-nav__link"><a href="./collection.html">iPad</a></li></ul>
+															<li class="site-nav__link"><a href="#">Gaming Laptops</a></li>
+															<li class="site-nav__link"><a href="#">Tablets</a></li>
+															<li class="site-nav__link"><a href="#">2 in 1 Tablets</a></li>
+															<li class="site-nav__link"><a href="#">Phone Call Tablets</a></li>
+															<li class="site-nav__link"><a href="#">iPad</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2485,11 +1944,11 @@
 													<ul>
 														<li class="site-nav__heading">Tablet &amp; Laptop Accessories</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Laptop Bags &amp; Cases</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Laptop Batteries</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Tablet Accessories</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Tablet LCD Screens</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Tablet Cases</a></li></ul>
+															<li class="site-nav__link"><a href="#">Laptop Bags &amp; Cases</a></li>
+															<li class="site-nav__link"><a href="#">Laptop Batteries</a></li>
+															<li class="site-nav__link"><a href="#">Tablet Accessories</a></li>
+															<li class="site-nav__link"><a href="#">Tablet LCD Screens</a></li>
+															<li class="site-nav__link"><a href="#">Tablet Cases</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2507,12 +1966,12 @@
 													<ul>
 														<li class="site-nav__heading">Security &amp; Protection</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Surveillance Products</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Access Control</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Fire Protection</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Workplace Safety Supplies</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Alarm &amp; Sensor</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Door Intercom</a></li></ul>
+															<li class="site-nav__link"><a href="#">Surveillance Products</a></li>
+															<li class="site-nav__link"><a href="#">Access Control</a></li>
+															<li class="site-nav__link"><a href="#">Fire Protection</a></li>
+															<li class="site-nav__link"><a href="#">Workplace Safety Supplies</a></li>
+															<li class="site-nav__link"><a href="#">Alarm &amp; Sensor</a></li>
+															<li class="site-nav__link"><a href="#">Door Intercom</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2520,11 +1979,11 @@
 													<ul>
 														<li class="site-nav__heading">Storage Devices</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">USB Flash Drives</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Memory Cards</a></li>
-															<li class="site-nav__link"><a href="./collection.html">External Hard Drives</a></li>
-															<li class="site-nav__link"><a href="./collection.html">HDD Enclosures</a></li>
-															<li class="site-nav__link"><a href="./collection.html">SSD</a></li></ul>
+															<li class="site-nav__link"><a href="#">USB Flash Drives</a></li>
+															<li class="site-nav__link"><a href="#">Memory Cards</a></li>
+															<li class="site-nav__link"><a href="#">External Hard Drives</a></li>
+															<li class="site-nav__link"><a href="#">HDD Enclosures</a></li>
+															<li class="site-nav__link"><a href="#">SSD</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2542,12 +2001,12 @@
 													<ul>
 														<li class="site-nav__heading">Office Electronics</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Printer Supplies</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Office &amp; School Supplies</a></li>
-															<li class="site-nav__link"><a href="./collection.html">3D Printers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Printers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Scanners</a></li>
-															<li class="site-nav__link"><a href="./collection.html">3D Pens</a></li></ul>
+															<li class="site-nav__link"><a href="#">Printer Supplies</a></li>
+															<li class="site-nav__link"><a href="#">Office &amp; School Supplies</a></li>
+															<li class="site-nav__link"><a href="#">3D Printers</a></li>
+															<li class="site-nav__link"><a href="#">Printers</a></li>
+															<li class="site-nav__link"><a href="#">Scanners</a></li>
+															<li class="site-nav__link"><a href="#">3D Pens</a></li></ul>
 														</li>
 													</ul>
 												</div>
@@ -2555,9 +2014,9 @@
 													<ul>
 														<li class="site-nav__heading">Networking</li>
 														<li class="sub"><ul>
-															<li class="site-nav__link"><a href="./collection.html">Wireless Routers</a></li>
-															<li class="site-nav__link"><a href="./collection.html">Network Cards</a></li>
-															<li class="site-nav__link"><a href="./collection.html">3G Modems</a></li>
+															<li class="site-nav__link"><a href="#">Wireless Routers</a></li>
+															<li class="site-nav__link"><a href="#">Network Cards</a></li>
+															<li class="site-nav__link"><a href="#">3G Modems</a></li>
 															<li class="site-nav__link"><a href="./collection.html">Modem-Router Combos</a></li>
 															<li class="site-nav__link"><a href="./collection.html">Networking Tools</a></li></ul>
 														</li>
@@ -3980,7 +3439,7 @@
 									<div class="tp-banner" >
 										<ul>
 											<li data-transition="boxslide"  data-masterspeed="2000" data-saveperformance="on"  data-title="Slideshow 1" >
-												<img src="./assets/images/slideshow1.png" data-lazyload="./assets/images/slideshow1.png"  alt="Slideshow 1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+												<img src="{{asset('assets/images/scales-and-balances-all-brands.webp')}}" data-lazyload="{{asset('assets/images/scales-and-balances-all-brands.webp')}}"  alt="Slideshow 1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 												<div class="tp-caption  easeOutBack" data-x='30' data-y='150'
 													data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
 													data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
@@ -3990,7 +3449,7 @@
 												<a class="slideshow-action-link" href="./collection.html"></a>
 											</li>
 											<li data-transition="slideright"  data-masterspeed="2000" data-saveperformance="on"  data-title="Slideshow 1" >
-												<img src="./assets/images/slideshow1.png" data-lazyload="./assets/images/slideshow1.png"  alt="Slideshow 1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+												<img src="{{asset('assets/images/scales-and-balances-all-brands.webp')}}" data-lazyload="{{asset('assets/images/scales-and-balances-all-brands.webp')}}"  alt="Slideshow 1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 												<div class="tp-caption  easeOutBack" data-x='60' data-y='120'
 													data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
 													data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
@@ -4028,7 +3487,7 @@
 									</a>
 								</div>
 								<div class="brand-elemet">
-									<a href="./collection.html">
+									<a href="#">
 										<img src="./assets/images/market-adidas.png" alt="">
 									</a>
 								</div>
@@ -4039,18 +3498,18 @@
 						<div id="html-section-home-topbanners" class="html-section index-section index-section--flush">
 							<div class="banners-box">
 								<div class="banner-element banner-1">
-									<a href="./collection.html">
-										<img src="./assets/images/banner-top-1.png" alt="">
+									<a href="#">
+										<img src="{{asset('assets/images/scales-price-load-cells.avif')}}" alt="">
 									</a>
 								</div>
 								<div class="banner-element banner-2">
-									<a href="./collection.html">
-										<img src="./assets/images/banner-top-2.png" alt="">
+									<a href="#">
+										<img src="{{asset('assets/images/tanks-hopper-price_58e1e8ed-8510-40d2-bb56-1c3d68d31d18.avif')}}" alt="">
 									</a>
 								</div>
 								<div class="banner-element banner-3">
-									<a href="./collection.html">
-										<img src="./assets/images/banner-top-3.png" alt="">
+									<a href="#">
+										<img src="{{asset('assets/images/farm-kit-offer-price.jpg')}}" alt="">
 									</a>
 								</div>
 							</div>
@@ -4948,7 +4407,7 @@
 						<div class="banners-box">
 							<div class="grid banners-section ">
 								<div class="banner-element banner-1 grid__item  captionposition-left">
-									<a href="./collection.html">
+									<a href="#">
 										<img src="./assets/images/banner1.png" alt="">
 									</a>
 								</div>
@@ -6559,27 +6018,27 @@
 								<div class="content">
 									<ul class="grid__link">
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Sign in</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Buyer Protection</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Payment Options</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Shipping Policy</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Return Policy</span>
 											</a>
 										</li>
@@ -6593,27 +6052,27 @@
 								<div class="content">
 									<ul class="grid__link">
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Merchant Central</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Merchant Sign In</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Merchant Registration</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>How Does It Work</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Pricing</span>
 											</a>
 										</li>
@@ -6627,27 +6086,27 @@
 								<div class="content">
 									<ul class="grid__link">
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>See all Help</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>My Account</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>FAQs</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Other Services</span>
 											</a>
 										</li>
 										<li>
-											<a href="./collection.html">
+											<a href="#">
 												<span>Shop Box</span>
 											</a>
 										</li>
@@ -6785,102 +6244,4 @@
 	<div id="scroll-to-top" title="Scroll to Top" class="off">
 		<i class="fa fa-caret-up"></i>
 	</div>
-
-	<script>
-		var productsProIO=[];
-		var productProIO= {
-			"id": "1899239866457", "title": "Consequuntur magni dolores", "url": "./product.html", "price": "$199.00", "image": "./assets/images/product1.png"
-		}
-		productsProIO.push(productProIO);
-		var productProIO= {
-			"id": "1899239145561", "title": "Raesent Scelerisque Dan", "url": "./product.html", "price": "$19.99", "image": "./assets/images/product3.png"
-		}
-		productsProIO.push(productProIO);
-		var productProIO= {
-			"id": "1899238654041", "title": "Quisque vel enim quis", "url": "./product.html", "price": "$27.99", "image": "./assets/images/product5.png"
-		}
-		productsProIO.push(productProIO);
-		var productProIO= {
-			"id": "1899238064217", "title": "Quisque vel enim", "url": "./product.html", "price": "$79.99", "image": "./assets/images/product7.png"
-		}
-		productsProIO.push(productProIO);
-		var productProIO= {
-			"id": "1899238064217", "title": "Quis nostrum exercitationem", "url": "./product.html", "price": "$199.99", "image": "./assets/images/product9.png"
-		}
-		productsProIO.push(productProIO);
-
-		var notifyProIO = {
-			version: 1,
-			isNotifyEnabled: function() {
-				var t = !0,
-					e = document.getElementsByTagName("meta");
-				for (i = 0; i < e.length; i++) "notify:enabled" == e[i].getAttribute("name") && "false" === e[i].getAttribute("content") && (t = !1);
-				return this.settings.hideMobile && this.isMobileDevice() && (t = !1), t
-			},
-			isMobileDevice: function() {
-				var t = navigator.userAgent || navigator.vendor || window.opera;
-				return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(t) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(t.substr(0, 4)) ? !0 : !1
-			},
-			setup: function(t) {
-				if (this.isNotifyEnabled()) {
-					this.products = t;
-					var i = document.createElement("div");
-					i.id = "suggestproduct", i.className = "suggestion-modal", document.body.appendChild(i), this.notificationDiv = document.getElementById("suggestproduct"), setTimeout("notifyProIO.runNotifications()", this.settings.initialDelay + 1)
-				}
-			},
-			runNotifications: function() {
-				var t = !1;
-				if (this.settings.totalDisplayed < this.settings.totalPerPage) {
-					this.settings.totalDisplayed++;
-					for (var i in this.products)
-						if (product = this.products[i], null === localStorage.getItem("snv-" + product.id)) {
-							localStorage.setItem("snv-" + product.id, 1), this.displayNotification(product.title, product.image, product.url, product.price), t = !0;
-							break
-						}
-					t ? setTimeout("notifyProIO.runNotifications()", this.settings.displayInterval + this.settings.displayHold) : this.settings.loop && (this.clearLocalStorage(), this.runNotifications())
-				}
-			},
-			displayNotification: function(t, i, e, o) {
-				var n = '<a href="' + e + '">' + t + "</a>",
-					p = "Other Customers also viewed",
-					s = this.settings.message.replace("{product_with_link}", n).replace("{money}", '<span class="price">' + o + "</span>");
-				document.getElementById("suggestproduct").innerHTML = i ? '<div class="title">' + p + '</div><div class="content"><img src="' + i + '"><p>' + s + "</p></div>" : "<p>" + s + "</p></div>", setTimeout(function() {
-					notifyProIO.animateIn()
-				}, 500), setTimeout(function() {
-					notifyProIO.animateOut()
-				}, this.settings.displayHold)
-			},
-			animateIn: function() {
-				var t = 0,
-					i = 0,
-					e = this,
-					o = setInterval(function() {
-						t >= 1 && clearInterval(o), e.notificationDiv.style.bottom = i + "px", e.notificationDiv.style.opacity = t, e.notificationDiv.style.filter = "alpha(opacity=" + 100 * t + ")", e.notificationDiv.style.display = "block", t += .05, i += 1
-					}, 25)
-			},
-			animateOut: function() {
-				var t = 1,
-					i = 20,
-					e = this,
-					o = setInterval(function() {
-						return 0 >= t ? (clearInterval(o), e.notificationDiv.style.display = "none", !1) : (e.notificationDiv.style.bottom = i + "px", e.notificationDiv.style.opacity = t, e.notificationDiv.style.filter = "alpha(opacity=" + 100 * t + ")", t -= .05, t = t.toFixed(2), void(i -= 1))
-					}, 25)
-			},
-			clearLocalStorage: function() {
-				for (var t = localStorage.length - 1; t > 0; t--) "snv" === localStorage.key(t).split("-")[0] && localStorage.removeItem(localStorage.key(t))
-			}
-		};
-
-		notifyProIO.settings = {};
-		notifyProIO.settings.message = ' {product_with_link} {money}';
-		notifyProIO.settings.hideMobile = true;
-		notifyProIO.settings.initialDelay = 1000; // 1s
-		notifyProIO.settings.displayInterval = 10000; // 10s
-		notifyProIO.settings.displayHold = 5000; // 7s
-		notifyProIO.settings.totalPerPage = 30;
-		notifyProIO.settings.totalDisplayed = 0;
-		notifyProIO.settings.loop = true;
-		notifyProIO.setup(productsProIO);
-	</script>
-</body>
-</html>
+@stop
