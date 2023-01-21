@@ -15,7 +15,35 @@ class FrontController extends Controller
         ->orderby('order_by')
         ->get();
 
-        return view('welcome', compact('categorias'));
+        $categories = DB::table('xcart_categories')
+        ->select('xcart_categories.*')
+        ->addSelect(DB::raw('(SELECT COUNT(*) FROM xcart_products_categories WHERE xcart_products_categories.categoryid = xcart_categories.categoryid) AS product_count'))
+        ->where('avail', 'Y')
+        ->where('product_count', '>=', 3)
+        ->inRandomOrder()
+        ->take(5)
+        ->get();
+
+        $bestsellers = array();
+        foreach ($categories as $category) {
+            $bestsellers[$category->category] = DB::table('xcart_products')
+            ->join('xcart_products_categories', 'xcart_products.productid', '=', 'xcart_products_categories.productid')
+            ->join('xcart_images_p', 'xcart_images_p.id', '=', 'xcart_products.productid')
+            ->select('xcart_products.*','xcart_images_p.image_path')
+            ->where('xcart_products_categories.categoryid', $category->categoryid)
+            ->inRandomOrder()
+            ->take(3)
+            ->get();
+        }
+
+        $ramdomproducts = DB::table('xcart_products')
+        ->join('xcart_images_p', 'xcart_images_p.id', '=', 'xcart_products.productid')
+        ->select('xcart_products.*', 'xcart_images_p.image_path')
+        ->inRandomOrder()
+        ->take(10)
+        ->get();
+
+        return view('welcome', compact('categorias', 'bestsellers', 'ramdomproducts'));
     }
 
     public function categoria($id)
@@ -45,6 +73,8 @@ class FrontController extends Controller
         ->where('id', $id)
         ->get();
 
+
+
         $randomProducts = DB::table('xcart_products')
         ->join('xcart_images_P', 'xcart_products.productid', '=', 'xcart_images_P.id')
         ->select('xcart_products.*', 'xcart_images_P.image_path')
@@ -62,4 +92,6 @@ class FrontController extends Controller
 
         return view('productos.detail', compact('producto', 'imagenes', 'randomProducts'));
     }
+
+
 }

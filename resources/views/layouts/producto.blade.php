@@ -2,9 +2,6 @@
 
 @section('body')
 
-
-
-
 		<nav class="menu-navigation">
 			<div class="navigation-bar menu-bar">
 				<div class="wrapper wrapper-allcoll">
@@ -17,7 +14,7 @@
 										<i class="fa fa-caret-down" aria-hidden="true"></i>
 									</div>
 								</div>
-								<div class="allcollections-content have-icon">
+								{{-- <div class="allcollections-content have-icon">
 									<ul class="sdcollections-list">
 										<li class="site-nav__item site-nav--has-dropdown dropdown megamenu-vertical megacol-3 dropdown-long" aria-haspopup="true">
 											<p class="site-nav__link">
@@ -1883,7 +1880,7 @@
 											</ul>
 										</li>
 									</ul>
-								</div>
+								</div> --}}
 							</div>
 						</div>
 					</div>
@@ -1893,7 +1890,7 @@
 								<div class="horizontal-menu desktop-menu medium-down--hide" style="">
 									<ul class="site-nav site-nav--init" id="AccessibleNav">
 										<li class="site-nav__item site-nav__expanded-item  active" data-url="/">
-											<a href="./index.html" class="site-nav__link">
+											<a href="{{route('index')}}" class="site-nav__link">
 												<span>Home</span>
 											</a>
 										</li>
@@ -2617,7 +2614,7 @@
 										<div class="mobileNav-menu">
 											<ul class="mobileNav-nav">
 												<li class="mobile-nav__item active" data-url="/">
-													<a href="./index.html" class="site-nav__link">
+													<a href="{{route('index')}}" class="site-nav__link">
 														<span>Home</span>
 													</a>
 												</li>
@@ -5325,7 +5322,7 @@
 						<div itemscope="" itemtype="http://schema.org/Product">
 							<meta itemprop="url" content="./product.html">
 							<meta itemprop="image" content="./assets/images/detail1.png">
-							<div class="next-prev-products">
+							{{-- <div class="next-prev-products">
 								<div class="prev-product2">
 									<a href="./collection.html" title="Consequuntur magni dolores">
 										<span class="icon">
@@ -5346,7 +5343,7 @@
 										</span>
 									</a>
 								</div>
-							</div>
+							</div> --}}
                             @yield('detail')
 
 
@@ -5617,7 +5614,7 @@
 		</div>
 	</div>
 
-	<div class="combo-icons medium-down--hide">
+	{{-- <div class="combo-icons medium-down--hide">
 		<div id="float-saleoff" title="Special Deals">
 			<a href="./page-saleoff.html">
 				<i class="fa fa-gift" aria-hidden="true"></i>
@@ -5639,7 +5636,7 @@
 				</span>
 			</a>
 		</div>
-	</div>
+	</div> --}}
 	<div id="scroll-to-top" title="Scroll to Top" class="off">
 		<i class="fa fa-caret-up"></i>
 	</div>
