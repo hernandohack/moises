@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [App\Http\Controllers\FrontController::class, 'index'])->name('index');
-Route::get('/categoria/{id}', [App\Http\Controllers\FrontController::class, 'categoria'])->name('categoria');
-Route::get('/producto/{id}', [App\Http\Controllers\FrontController::class, 'producto'])->name('producto');
+Route::get('/categoria/{slug}', [App\Http\Controllers\FrontController::class, 'categoria'])->name('categoria');
+Route::get('/producto/{slug}', [App\Http\Controllers\FrontController::class, 'producto'])->name('producto');
 
 Auth::routes();
 

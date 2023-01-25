@@ -7,7 +7,8 @@
     <div class="grid-view-item">
         <div class="grid-normal-display">
             <div class="grid__image product-image">
-                <a class="grid-view-item__link" href="{{route('producto',$pro->productid)}}">
+                <a class="grid-view-item__link" href="{{route('producto',$pro->slug)}}">
+                {{-- <a class="grid-view-item__link" href="{{ route('producto', [$pro->slug], false) }}"> --}}
                     <img class="grid-view-item__image" src="{{asset($pro->image_path)}}" alt="Consequuntur magni dolores">
                     <img class="hover-image" src="{{asset($pro->image_path)}}" alt="Consequuntur magni dolores" title="Consequuntur magni dolores">
                 </a>
@@ -36,7 +37,7 @@
         </div>
         <div class="group-information style-">
             {{-- <div class="grid-view-item__vendor">KingStone</div> --}}
-            <div class="h4 grid-view-item__title"><a href="./product.html">{{$pro->product}}</a></div>
+            <div class="h4 grid-view-item__title"><a href="{{route('producto',$pro->slug)}}">{{$pro->product}}</a></div>
             <div class="price-and-ship">
                 <div class="grid-view-item__meta grid__item large--three-quarters">
                     {{-- <s class="product-price__price"><span class="money">$24.99 USD</span></s> --}}

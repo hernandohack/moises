@@ -228,7 +228,7 @@
                             <div class="grid-view-item">
                                 <div class="grid-normal-display">
                                     <div class="grid__image product-image">
-                                        <a class="grid-view-item__link" href="{{route('producto',$ramdom->productid)}}">
+                                        <a class="grid-view-item__link" href="{{route('producto',$ramdom->slug)}}">
                                             <img class="grid-view-item__image" src="{{asset($ramdom->image_path)}}" alt="Consequuntur magni dolores">
                                             <img class="hover-image" src="{{asset($ramdom->image_path)}}" alt="Consequuntur magni dolores" title="Consequuntur magni dolores">
                                         </a>
@@ -251,8 +251,8 @@
                                     </div>
                                 </div>
                                 <div class="group-information style-">
-                                    <div class="grid-view-item__vendor">{{$ramdom->product}}</div>
-                                    <div class="h4 grid-view-item__title"><a  href="{{route('producto',$ramdom->productid)}}">{{$ramdom->productcode}}</a></div>
+                                    <div class="grid-view-item__vendor"><a href="{{route('producto',$ramdom->slug)}}">{{$ramdom->product}}</a></div>
+                                    <div class="h4 grid-view-item__title"><a  href="{{route('producto',$ramdom->slug)}}">{{$ramdom->productcode}}</a></div>
                                     <div class="price-and-ship">
                                         <div class="grid-view-item__meta grid__item large--three-quarters">
                                             <span class="product-price__price product-price__sale">

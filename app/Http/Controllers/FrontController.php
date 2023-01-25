@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\xcart_product;
+use App\Models\xcart_categorie;
 
 class FrontController extends Controller
 {
@@ -46,17 +48,24 @@ class FrontController extends Controller
         return view('welcome', compact('categorias', 'bestsellers', 'ramdomproducts'));
     }
 
-    public function categoria($id)
+    public function categoria($slug)
     {
+
+        $categoria = xcart_categorie::where('slug', $slug)->first();
+        $id = $categoria->categoryid;
+
         $categoria = DB::table('xcart_categories')
         ->where('categoryid',$id)->first();
 
         $subcategorias = DB::table('xcart_categories')
+        ->join('xcart_images_c', 'xcart_categories.categoryid', '=', 'xcart_images_c.id')
+        ->select('xcart_categories.*', 'xcart_images_c.image_path')
         ->where('parentid', $id)
-        ->where('avail', 'Y')->get();
+        ->where('xcart_categories.avail', 'Y')->get();
 
-        $productos = DB::table('xcart_products')
-        ->leftjoin('xcart_products_categories', 'xcart_products.productid', '=', 'xcart_products_categories.productid')
+        // $productos = DB::table('xcart_products')
+        $productos = xcart_product::
+        leftjoin('xcart_products_categories', 'xcart_products.productid', '=', 'xcart_products_categories.productid')
         ->leftjoin('xcart_images_P', 'xcart_products.productid', '=', 'xcart_images_P.id')
         ->where('xcart_products_categories.categoryid', $id)
         ->where('xcart_products.forsale', 'Y')
@@ -67,13 +76,14 @@ class FrontController extends Controller
        return view('productos.index', compact('categoria', 'subcategorias', 'productos'));
     }
 
-    public function producto($id)
+    public function producto($slug)
     {
+        $product = xcart_product::where('slug', $slug)->first();
+
+        $id = $product->productid;
         $imagenes = DB::table('xcart_images_d')
         ->where('id', $id)
         ->get();
-
-
 
         $randomProducts = DB::table('xcart_products')
         ->join('xcart_images_P', 'xcart_products.productid', '=', 'xcart_images_P.id')
