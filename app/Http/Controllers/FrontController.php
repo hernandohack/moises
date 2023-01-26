@@ -66,10 +66,10 @@ class FrontController extends Controller
         // $productos = DB::table('xcart_products')
         $productos = xcart_product::
         leftjoin('xcart_products_categories', 'xcart_products.productid', '=', 'xcart_products_categories.productid')
-        ->leftjoin('xcart_images_P', 'xcart_products.productid', '=', 'xcart_images_P.id')
+        ->leftjoin('xcart_images_p', 'xcart_products.productid', '=', 'xcart_images_p.id')
         ->where('xcart_products_categories.categoryid', $id)
         ->where('xcart_products.forsale', 'Y')
-        ->select('xcart_products.*', 'xcart_images_P.image_path')
+        ->select('xcart_products.*', 'xcart_images_p.image_path')
         ->get();
 
 
@@ -88,8 +88,8 @@ class FrontController extends Controller
 
 
        $randomProducts = DB::table('xcart_products')
-       ->join('xcart_images_P', 'xcart_products.productid', '=', 'xcart_images_P.id')
-       ->select('xcart_products.*', 'xcart_images_P.image_path')
+       ->join('xcart_images_p', 'xcart_products.productid', '=', 'xcart_images_p.id')
+       ->select('xcart_products.*', 'xcart_images_p.image_path')
        ->inRandomOrder()
        ->take(6)
        ->get();
@@ -117,10 +117,10 @@ class FrontController extends Controller
         $buscar = $request->input('producto');
 
         $productos = xcart_product::
-        leftjoin('xcart_images_P', 'xcart_products.productid', '=', 'xcart_images_P.id')
+        leftjoin('xcart_images_p', 'xcart_products.productid', '=', 'xcart_images_p.id')
         ->where('xcart_products.forsale', 'Y')
         ->where('product', 'like', "%$buscar%")
-        ->select('xcart_products.*', 'xcart_images_P.image_path')
+        ->select('xcart_products.*', 'xcart_images_p.image_path')
         ->get();
 
         return view('search', compact('productos', 'buscar'));
