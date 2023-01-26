@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\FrontController::class, 'index'])->name('index');
 Route::get('/categoria/{slug}', [App\Http\Controllers\FrontController::class, 'categoria'])->name('categoria');
 Route::get('/producto/{slug}', [App\Http\Controllers\FrontController::class, 'producto'])->name('producto');
+Route::post('/search', [App\Http\Controllers\FrontController::class, 'buscar'])->name('buscar');
 
 Auth::routes();
 

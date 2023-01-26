@@ -81,27 +81,50 @@ class FrontController extends Controller
         $product = xcart_product::where('slug', $slug)->first();
 
         $id = $product->productid;
-        $imagenes = DB::table('xcart_images_d')
-        ->where('id', $id)
-        ->get();
 
-        $randomProducts = DB::table('xcart_products')
-        ->join('xcart_images_P', 'xcart_products.productid', '=', 'xcart_images_P.id')
-        ->select('xcart_products.*', 'xcart_images_P.image_path')
-        ->inRandomOrder()
-        ->take(6)
-        ->get();
+       $imagenes = DB::table('xcart_images_d')
+       ->where('id', $id)
+       ->get();
 
-        $producto = DB::table('xcart_products')
-        ->join('xcart_pricing', 'xcart_products.productid', '=', 'xcart_pricing.productid')
-        ->where('xcart_products.productid', $id)
-        ->select('xcart_products.*', 'xcart_pricing.price')
-        ->orderBy('xcart_pricing.priceid', 'desc')
-        ->limit(1)
-        ->first();
 
-        return view('productos.detail', compact('producto', 'imagenes', 'randomProducts'));
+       $randomProducts = DB::table('xcart_products')
+       ->join('xcart_images_P', 'xcart_products.productid', '=', 'xcart_images_P.id')
+       ->select('xcart_products.*', 'xcart_images_P.image_path')
+       ->inRandomOrder()
+       ->take(6)
+       ->get();
+
+      $producto = DB::table('xcart_products')
+      ->join('xcart_pricing', 'xcart_products.productid', '=', 'xcart_pricing.productid')
+      ->where('xcart_products.productid', $id)
+      ->select('xcart_products.*', 'xcart_pricing.price')
+      ->orderBy('xcart_pricing.priceid', 'desc')
+      ->limit(1)
+      ->first();
+
+      $variantes = DB::table('xcart_variants')
+      ->join('xcart_pricing', 'xcart_variants.variantid', '=', 'xcart_pricing.variantid')
+      ->where('xcart_variants.productid', $id)
+      ->select('xcart_variants.*', 'xcart_pricing.price')
+      ->get();
+
+
+        return view('productos.detail', compact('producto', 'imagenes','variantes', 'randomProducts'));
     }
 
+    public function buscar(REQUEST $request)
+    {
+        $buscar = $request->input('producto');
+
+        $productos = xcart_product::
+        leftjoin('xcart_images_P', 'xcart_products.productid', '=', 'xcart_images_P.id')
+        ->where('xcart_products.forsale', 'Y')
+        ->where('product', 'like', "%$buscar%")
+        ->select('xcart_products.*', 'xcart_images_P.image_path')
+        ->get();
+
+        return view('search', compact('productos', 'buscar'));
+
+    }
 
 }

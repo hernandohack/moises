@@ -293,11 +293,11 @@
 																				<form action="./product.html" method="post" enctype="multipart/form-data" class="AddToCartForm form-vertical">
 																					<input type="hidden" name="quantity" value="1">
 																					<div class="product-single__add-to-cart">
-																						<button type="submit" name="add" class="btn AddToCart">
+																						{{-- <button type="submit" name="add" class="btn AddToCart">
 																							<span class="AddToCartText">
 																								Add to Cart
 																							</span>
-																						</button>
+																						</button> --}}
 																					</div>
 																				</form>
 																			</div>
@@ -1038,12 +1038,12 @@
                                             <div class="quickbuy">
                                                 <div class="product-ajax-quickbuy in-stock hidden-xs hidden-sm">
                                                     <div class="effect-ajax-cart">
-                                                        <form action="./product.html" method="post" enctype="multipart/form-data" class="AddToCartForm form-vertical">
+                                                        <form action="https://aacells.com/" method="post" enctype="multipart/form-data" class="AddToCartForm form-vertical">
                                                             <input type="hidden" name="quantity" value="1">
                                                             <div class="product-single__add-to-cart">
                                                                 <button type="submit" name="add" class="btn AddToCart">
                                                                     <span class="AddToCartText">
-                                                                        Add to Cart
+                                                                        Buy Now
                                                                     </span>
                                                                 </button>
                                                             </div>

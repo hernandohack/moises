@@ -5,7 +5,9 @@
 <div class="grid product-single">
     <div class="grid__item large--one-half text-center">
         <div class="product-single__photos elevatezoom" id="ProductPhoto">
+            @isset($imagenes[0])
             <img src="{{asset($imagenes[0]->image_path)}}" alt="Reprehenderit qui in ea" id="ProductPhotoImg" data-image-id="3885204537433" data-zoom-image="./assets/images/detail1.png">
+            @endisset
         </div>
         <div class="product-single__thumbnails-grid">
             <ul class="product-single__thumbnails" id="ProductThumbs">
@@ -41,13 +43,12 @@
                             <div class="order-text">sold in the last hour</div>
                         </div>
                     </div>
-                    <div class="qty-bar">
+                    {{-- <div class="qty-bar">
                         <span class="order-process process" style="width: 78.9474%;"></span>
                         <div class="order-text">
                             <span class="qty-count" data-qtymin="5" data-qtymax="19">15</span> of 20 sold
-
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="price_wrapper">
                     {{-- <span id="PriceA11y" class="visually-hidden">Regular price</span>
@@ -60,10 +61,10 @@
                     <span id="ProductPrice" class="product-single__price on-sale" itemprop="price" content="25.0">
                         <span class="money">${{$producto->price}} USD</span>
                     </span>
-                    <div class="product-salelabel ">
+                    {{-- <div class="product-salelabel ">
                         <span class="salelabel-area" style="color:#ff5722; background-color: #ffd839;">-20%</span>
                         <span class="salelabel-days">6 days left</span>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="sku">
                     <strong>SKU: </strong> {{$producto->productcode}}
@@ -82,7 +83,7 @@
                 <meta itemprop="priceCurrency" content="USD">
                 <link itemprop="availability" href="http://schema.org/InStock">
                 <form action="#" method="post" enctype="multipart/form-data" class="product-single__form AddToCartForm" id="">
-                    <div class="product-single__quantity">
+                    {{-- <div class="product-single__quantity">
                         <label for="Quantity" class="product-single__quantity-label js-quantity-selector">Quantity</label>
                         <div class="js-qty">
                             <button type="button" class="js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="" data-qty="0" aria-label="Reduce item quantity by one">
@@ -95,18 +96,20 @@
                                 <span class="fallback-text" aria-hidden="true">+</span>
                             </button>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="group-button">
                         <div class="product-single__buynow">
+                            <a href="https://aacells.com/" target="_blank" >
                             <div class="btn Buynow" title="Add and Go to Checkout directly!">
                                 <span class="BuynowText">Buy Now</span>
                             </div>
+                        </a>
                         </div>
-                        <div class="product-single__add-to-cart">
+                        {{-- <div class="product-single__add-to-cart">
                             <button type="submit" name="add" class="btn AddToCart" title="Add this product to Cart">
                                 <span class="AddToCartText">Add to Cart</span>
                             </button>
-                        </div>
+                        </div> --}}
                         <break></break>
                     </div>
                 </form>
@@ -156,7 +159,7 @@
         </div>
     </div>
     <div class="text-right button-backtocol">
-        <a href="/collections/flash-sale" class="return-link">← Back to Flash Sale</a>
+        {{-- <a href="/collections/flash-sale" class="return-link">← Back to Flash Sale</a> --}}
     </div>
     <div class="grid grid__item product-information">
         <div id="tabs-information">
@@ -181,6 +184,32 @@
                 <p style="text-align:center;">{!!$producto->fulldescr!!}
 
                 </p>
+                @if(count($variantes) > 0)
+
+                <table class="small-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Description</th>
+                            <th>Pan size</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($variantes as $variante)
+                        <tr>
+                            <td style="padding: 1px">{{ $variante->productcode }}</td>
+                            <td>{{ $variante->capacity_and_resolution }}</td>
+                            <td>{{ $variante->pan_size }}</td>
+                            <td>{{ $variante->price }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
+
+
+                @endif
             </div>
             <div class="tab-panel fade " id="size">
                 <h2>Warranty Information</h2>
@@ -237,7 +266,7 @@
                                         <div class="product-ajax-quickbuy in-stock hidden-xs hidden-sm">
                                             <div class="effect-ajax-cart">
                                                 <form action="./product.html" method="post" enctype="multipart/form-data" class="AddToCartForm form-vertical">
-                                                    <input type="hidden" name="quantity" value="1">
+                                                    {{-- <input type="hidden" name="quantity" value="1"> --}}
                                                     <div class="product-single__add-to-cart">
                                                         <button type="submit" name="add" class="btn AddToCart">
                                                             <span class="AddToCartText">

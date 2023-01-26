@@ -217,7 +217,8 @@ table {
 }
 
 table th {
-    padding: 15px 20px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
     font: 700 14px Poppins;
     font-weight: 700;
     letter-spacing: 0;
@@ -229,7 +230,7 @@ table th:after {
 }
 
 table td {
-    padding: 20px;
+
     border: 1px solid #e5e5e5;
     border-right: none;
     border-bottom: none
@@ -241,6 +242,22 @@ table td:first-child {
 
 table td:after {
     content: none !important
+}
+
+.small-table {
+    font-size: 12px;
+    width: 50%;
+    margin: auto;
+  }
+
+.small-table td {
+    height: 20px;
+    padding: 2px;
+  text-align: center;
+}
+
+.small-table tr {
+    height: 15px !important;
 }
 
 .return-link {

@@ -7,7 +7,7 @@
 	<link rel="canonical" href="https://yoursite.com">
 	<link rel="shortcut icon" href="./assets/images/fav.png" type="image/png">
 
-    <title>Product Page - Megastore HTML</title>
+    <title>CellsMr - The Weighing SuperStore</title>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Megastore HTML">
     <meta property="og:url" content="https://yoursite.com">
@@ -469,9 +469,9 @@
                                         	<!-- Search Box -->
 										<div class="grid__item header-search large--five-tenths small--hide">
 											<div class="header-search-inner">
-												<form action="./search.html" method="get" class="input-group search-bar " role="search" style="position: relative;">
-													<input type="hidden" name="type" value="product">
-													<input type="search" name="q" value="" placeholder="Search something" class="input-group-field" aria-label="Search something" autocomplete="off">
+												<form action="{{route('buscar')}}" method="post" class="input-group search-bar " role="search" style="position: relative;">
+                                                    @csrf
+													<input type="search" name="producto" value="" placeholder="Search Product" class="input-group-field" aria-label="Search something" autocomplete="on">
 													<span class="input-group-btn">
 														<button type="submit" class=" icon-fallback-text">
 															<i class="icon-search" aria-hidden="true"></i>
@@ -480,26 +480,6 @@
 													</span>
 													<ul class="search-results" style="position: absolute; left: 0px; top: 40px; display: none;"></ul>
 												</form>
-												<div class="header-search-suggestion">
-													<ul class="grid__link">
-														<li>
-															<a href="./collection.html"><span>samsung</span></a>
-														</li>
-														<li>
-															<a href="./collection.html"><span>bosch</span></a>
-														</li>
-														<li>
-															<a href="./collection.html"><span>kingston</span></a>
-														</li>
-														<li>
-															<a href="./collection.html"><span>ensure gold</span></a>
-														</li>
-														<li>
-															<a href="./collection.html"><span>converse</span></a>
-														</li>
-													</ul>
-												</div>
-
 											</div>
 										</div>
 
@@ -594,7 +574,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-main">
+        {{-- <div class="footer-main">
             <div class="wrapper">
                 <div class="grid">
                     <div class="link-block grid__item one-fifth">
@@ -754,7 +734,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="footer-copyright">
             <div class="wrapper">
                 <div class="grid">

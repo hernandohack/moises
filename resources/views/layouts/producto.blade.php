@@ -5305,15 +5305,15 @@
 				<header class="section-header wrapper-breadcrumb">
 					<div class="wrapper">
 						<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-							<a href="/" title="Back to the frontpage">Home</a>
+							{{-- <a href="/" title="Back to the frontpage">Home</a> --}}
 							<span aria-hidden="true">
-								<i class="fa fa-angle-right" aria-hidden="true"></i>
+								{{-- <i class="fa fa-angle-right" aria-hidden="true"></i> --}}
 							</span>
-							<a href="/collections/flash-sale" title="">Flash Sale</a>
+							{{-- <a href="/collections/flash-sale" title="">Flash Sale</a> --}}
 							<span aria-hidden="true">
-								<i class="fa fa-angle-right" aria-hidden="true"></i>
+								{{-- <i class="fa fa-angle-right" aria-hidden="true"></i> --}}
 							</span>
-							<span>Reprehenderit qui in ea</span>
+							{{-- <span>Reprehenderit qui in ea</span> --}}
 						</nav>
 					</div>
 				</header>
