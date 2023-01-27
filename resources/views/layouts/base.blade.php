@@ -4,13 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="canonical" href="https://yoursite.com">
-	<link rel="shortcut icon" href="./assets/images/fav.png" type="image/png">
+	<link rel="canonical" href="https://cellsmr.com">
+	<link rel="shortcut icon" href="{{asset('assets/images/cellsmr.ico')}}" type="image/png">
 
     <title>CellsMr - The Weighing SuperStore</title>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Megastore HTML">
-    <meta property="og:url" content="https://yoursite.com">
+    <meta property="og:url" content="https://cellsmr.com">
     <meta property="og:description" content="Responsive HTML Template">
     <meta property="og:site_name" content="Responsive HTML Template">
     <meta name="twitter:card" content="summary">
@@ -45,6 +45,96 @@
     <script src="{{asset('assets/js/slick.min.js')}}" type="text/javascript"></script>
 	<script src="{{asset('assets/js/jquery.elevateZoom-3.0.8.min.js')}}" type="text/javascript"></script>
 	<script src="{{asset('assets/js/tada.js')}}"></script>
+    <style>
+
+        .call-floating-button {
+          position: fixed;
+          bottom: 260px;
+          right: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+
+          z-index: 999;
+      }
+
+      .call-floating-button img {
+          width: 32px;
+          height: 32px;
+      }
+
+
+
+        .whatsapp-floating-button {
+          position: fixed;
+          bottom: 160px;
+          right: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+
+          z-index: 999;
+
+        }
+
+        .telegram-floating-button {
+            position: fixed;
+            bottom: 55px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+
+
+            z-index: 999;
+        }
+
+        .text-whatsapp {
+            position: fixed;
+            bottom: 120px;
+            right: 20px;
+            font-size: 12px;
+            color: black;
+            text-align: center;
+           font-weight: bold;
+        }
+
+        .text-telegram {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          font-size: 12px;
+          color: black;
+          text-align: center;
+          font-weight: bold;
+
+        }
+        .text-phone {
+          position: fixed;
+          bottom: 230px;
+          right: 20px;
+          font-size: 12px;
+          color: black;
+          text-align: center;
+          font-weight: bold;
+
+        }
+
+        .whatsapp-floating-button img {
+            width: 32px;
+            height: 32px;
+        }
+
+      </style>
   </head>
 
   <body id="megastore-red" class="megastore template-index" style="position: relative; min-height: 100%; top: 0px;">
@@ -247,7 +337,7 @@
 				<div class="topinfom small--hide">
 					<div class="topinfo-text" style="background-color:#cccccc">
 						<div class="wrapper">
-							<a href="./collection.html">50+ Valentine's Day 2019 Food Freebies, Specials and Deals</a>
+							<p>WHATSAPP - CALL -TEXT US NOW MIAMI -USA +1(305)9189153 +1(305)5728228 miami@skytekglobal.com</p>
 						</div>
 					</div>
 				</div>
@@ -310,7 +400,7 @@
 						<div class="right-area">
 							<ul>
 								<li class="shopguide-link site-nav__item medium-down--hide">
-									<a href="./page-contact.html">Contact Us</a>
+									<a href="https://aacells.com/pages/contact-us" target="_blank">Contact Us</a>
 								</li>
 								<li class="customer-link site-nav__item">
 									<a class="site-nav__link site-nav__link--icon js-login-modal" data-mfp-src="#LoginModal">
@@ -509,9 +599,9 @@
 				</div>
 			</div>
 		</header>
-        <div style="width: 100%; height: 50px; background-color: #e62e04;">
+        <div style="width: 100%; height: 50px; background-color: #191919;">
             <ul>
-                <li style="width: 100%; position: absolute; z-index: 1001; overflow: visible; display: flex; justify-content: center; align-items: center;">
+                <li style="width: 100%; position: absolute; z-index: 1001; overflow: visible; display: flex; justify-content: center; align-items: center; padding-top: 5px">
                     <img src="{{asset('assets/images/big-discount_cellsmr.png')}}" alt="">
                 </li>
             </ul>
@@ -789,6 +879,22 @@
 <div id="scroll-to-top" title="Scroll to Top" class="off">
     <i class="fa fa-caret-up"></i>
 </div>
+
+
+<a href="tel:+13059189153" class="call-floating-button">
+    <img src="https://cdn-icons-png.flaticon.com/512/561/561253.png" alt="Call icon" width="32" height="32">
+  </a>
+      <div class="text-phone">Call Now <br> +1305 918 9153</div>
+
+   <a href="https://wa.me/+13059189153" class="whatsapp-floating-button">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" alt="WhatsApp icon" width="32" height="32">
+  </a>
+  <div class="text-whatsapp">WhatsApp  <br> +1305 918 9153</div>
+
+  <a href="https://t.me/{skytekmiami}" class="telegram-floating-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/906/906377.png" alt="Telegram icon" width="32" height="32">
+  </a>
+  <div class="text-telegram">Telegram <br> +1305 918 9153</div>
 
 </body>
 </html>

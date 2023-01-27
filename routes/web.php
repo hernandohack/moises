@@ -25,3 +25,8 @@ Route::post('/search', [App\Http\Controllers\FrontController::class, 'buscar'])-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/files/master/pdf/{path}', function ($path) {
+    $path = public_path("/files/master/pdf/$path.pdf");
+    return response()->file($path);
+    })->where('path', '.*')->middleware('web');

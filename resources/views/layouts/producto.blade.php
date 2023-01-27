@@ -2595,7 +2595,7 @@
 											</ul>
 										</li> --}}
 										<li class="site-nav__item site-nav__expanded-item " data-url="/pages/contact-us">
-											<a href="./page-contact.html" class="site-nav__link">
+											<a href="https://aacells.com/pages/contact-us" class="site-nav__link" target="_blank">
 												<span>Contact Us</span>
 											</a>
 										</li>
@@ -3362,7 +3362,7 @@
 														</li>
 
 														<li class="mobile-nav__item">
-															<a href="./page-contact.html" class="site-nav__link">
+															<a href="https://aacells.com/pages/contact-us" class="site-nav__link" target="_blank">
 																<span>Contact Us</span>
 															</a>
 														</li>
@@ -3394,7 +3394,7 @@
 													</ul>
 												</li>
 												<li class="mobile-nav__item" data-url="/pages/contact-us">
-													<a href="./page-contact.html" class="site-nav__link">
+													<a href="https://aacells.com/pages/contact-us" class="site-nav__link" target="_blank">
 														<span>Contact Us</span>
 													</a>
 												</li>

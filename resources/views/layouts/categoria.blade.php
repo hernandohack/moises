@@ -1894,7 +1894,7 @@
 										</li>
 
 										<li class="site-nav__item site-nav__expanded-item " data-url="/pages/contact-us">
-											<a href="./page-contact.html" class="site-nav__link">
+											<a href="https://aacells.com/pages/contact-us" class="site-nav__link" target="_blank">
 												<span>Contact Us</span>
 											</a>
 										</li>
@@ -4627,11 +4627,12 @@
 									</section>
 									<section >
                                         @foreach ($subcategorias as $sub )
-										<div class="categorias" >
+										<div class="categorias">
 
-                                                    <a href="{{ $sub->slug}}">
-                                                        <img src="{{asset($sub->image_path)}}" alt="">
-                                                    </a>
+                                            <a href="{{ $sub->slug}}">
+                                                <img src="{{asset($sub->image_path)}}" alt="">
+                                                <p >{{$sub->category}}</p>
+                                            </a>
 
                                         </div>
                                         @endforeach
@@ -5144,6 +5145,6 @@
 				</div>
 			</div>
 		</main>
-	
+
 
 @stop
