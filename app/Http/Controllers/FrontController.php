@@ -11,11 +11,7 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $categorias = DB::table('xcart_categories')
-        ->where('parentid', 0)
-        ->where('avail', 'Y')
-        ->orderby('order_by')
-        ->get();
+        $categorias = $this->categorias();
 
         $categories = DB::table('xcart_categories')
         ->select('xcart_categories.*')
@@ -54,8 +50,10 @@ class FrontController extends Controller
         $categoria = xcart_categorie::where('slug', $slug)->first();
         $id = $categoria->categoryid;
 
-        $categoria = DB::table('xcart_categories')
-        ->where('categoryid',$id)->first();
+        // $categoria = DB::table('xcart_categories')
+        // ->where('categoryid',$id)->first();
+
+        $categorias = $this->categorias();
 
         $subcategorias = DB::table('xcart_categories')
         ->join('xcart_images_c', 'xcart_categories.categoryid', '=', 'xcart_images_c.id')
@@ -73,7 +71,7 @@ class FrontController extends Controller
         ->get();
 
 
-       return view('productos.index', compact('categoria', 'subcategorias', 'productos'));
+       return view('productos.index', compact('categoria', 'subcategorias', 'productos', 'categorias' ));
     }
 
     public function producto($slug)
@@ -108,8 +106,10 @@ class FrontController extends Controller
       ->select('xcart_variants.*', 'xcart_pricing.price')
       ->get();
 
+      $categorias = $this->categorias();
 
-        return view('productos.detail', compact('producto', 'imagenes','variantes', 'randomProducts'));
+
+        return view('productos.detail', compact('producto', 'imagenes','variantes', 'randomProducts', 'categorias'));
     }
 
     public function buscar(REQUEST $request)
@@ -125,6 +125,17 @@ class FrontController extends Controller
 
         return view('search', compact('productos', 'buscar'));
 
+    }
+
+    private function categorias()
+    {
+        $categorias = DB::table('xcart_categories')
+        ->where('parentid', 0)
+        ->where('avail', 'Y')
+        ->orderby('order_by')
+        ->get();
+
+        return $categorias;
     }
 
 }
