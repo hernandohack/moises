@@ -123,7 +123,9 @@ class FrontController extends Controller
         ->select('xcart_products.*', 'xcart_images_p.image_path')
         ->get();
 
-        return view('search', compact('productos', 'buscar'));
+        $categorias = $this->categorias();
+
+        return view('search', compact('productos', 'buscar', 'categorias'));
 
     }
 
