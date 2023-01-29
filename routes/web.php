@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,5 @@ Route::get('/files/master/pdf/{path}', function ($path) {
     $path = public_path("/files/master/pdf/$path.pdf");
     return response()->file($path);
     })->where('path', '.*')->middleware('web');
+
+Route::resource('categoria', CategoriesController::class)->names('categorias');

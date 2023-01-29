@@ -317,17 +317,20 @@ return [
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
+            'can'  => 'no'
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Categorias',
+            'route'  => 'categorias.index',
             'icon' => 'fas fa-fw fa-user',
+            'can'  => 'todo'
         ],
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+            'can'  => 'todo'
         ],
         [
             'text'    => 'multilevel',
@@ -421,7 +424,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
