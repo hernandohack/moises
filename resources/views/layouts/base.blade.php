@@ -536,8 +536,9 @@
 									</div>
 								</div> --}}
 								<div class="mobileNav-search large--hide medium-down--one-whole small--one-whole">
-									<form action="./search.html" method="get" class="input-group search-bar search-bar--drawer" role="search" style="position: relative;">
-										<input type="search" name="q" value="" placeholder="Search something" class="input-group-field" aria-label="Search something" autocomplete="off">
+									<form action="{{route('buscar')}}" method="post" class="input-group search-bar search-bar--drawer" role="search" style="position: relative;">
+                                        @csrf
+										<input type="search" name="producto" value="" placeholder="Search Product" class="input-group-field" aria-label="Search something" autocomplete="off">
 										<span class="input-group-btn">
 											<button type="submit" class="btn--secondary icon-fallback-text">
 												<i class="icon-search" aria-hidden="true"></i>
@@ -606,6 +607,7 @@
                 </li>
             </ul>
         </div>
+
 
   @yield('body')
 

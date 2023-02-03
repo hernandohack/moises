@@ -20,6 +20,7 @@ use App\Http\Controllers\CategoriesController;
 
 Route::get('/', [App\Http\Controllers\FrontController::class, 'index'])->name('index');
 Route::get('/categoria/{slug}', [App\Http\Controllers\FrontController::class, 'categoria'])->name('categoria');
+Route::get('/categoria', [App\Http\Controllers\FrontController::class, 'categoria']);
 Route::get('/producto/{slug}', [App\Http\Controllers\FrontController::class, 'producto'])->name('producto');
 Route::post('/search', [App\Http\Controllers\FrontController::class, 'buscar'])->name('buscar');
 
@@ -32,4 +33,4 @@ Route::get('/files/master/pdf/{path}', function ($path) {
     return response()->file($path);
     })->where('path', '.*')->middleware('web');
 
-Route::resource('categoria', CategoriesController::class)->names('categorias');
+Route::resource('categoriaadmin', CategoriesController::class)->names('categorias');

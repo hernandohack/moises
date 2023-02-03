@@ -69,17 +69,17 @@
                 <div class="sku">
                     <strong>SKU: </strong> {{$producto->productcode}}
                 </div>
-                <div class="collshow">
+                {{-- <div class="collshow">
                     <strong>Category:  </strong>
                     <a href="./collection.html">All Products</a>,
                     <a href="./collection.html">Flash Sale</a>,
                     <a href="./collection.html">Jewelry</a>
-                </div>
-                <div class="tags">
+                </div> --}}
+                {{-- <div class="tags">
                     <strong>Tags:  </strong>
                     <a href="./collection.html">jewelry</a>,
                     <a href="./collection.html">voluptate</a>
-                </div>
+                </div> --}}
                 <meta itemprop="priceCurrency" content="USD">
                 <link itemprop="availability" href="http://schema.org/InStock">
                 <form action="#" method="post" enctype="multipart/form-data" class="product-single__form AddToCartForm" id="">

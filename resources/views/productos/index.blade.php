@@ -9,8 +9,8 @@
             <div class="grid__image product-image">
                 <a class="grid-view-item__link" href="{{route('producto',$pro->slug)}}">
                 {{-- <a class="grid-view-item__link" href="{{ route('producto', [$pro->slug], false) }}"> --}}
-                    <img class="grid-view-item__image" src="{{asset($pro->image_path)}}" alt="Consequuntur magni dolores">
-                    <img class="hover-image" src="{{asset($pro->image_path)}}" alt="Consequuntur magni dolores" title="Consequuntur magni dolores">
+                    <img class="grid-view-item__image" src="{{asset($pro->image_path)}}" alt="{{$pro->image_path}}">
+                    <img class="hover-image" src="{{asset($pro->image_path)}}" alt="{{$pro->image_path}}" title="{{$pro->image_path}}">
                 </a>
                 <div class="product-label">
                     <div class="label-element deal-label">
