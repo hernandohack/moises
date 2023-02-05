@@ -186,7 +186,7 @@
 					<div class="wrap_allcoll grid__item large--one-quarter">
 						<div id="html-section-home-vertical-menu" class="html-section index-section revolution-slider">
 							<div class="allcollections-title">
-								<span class="title">Categories</span>
+								<span class="title">Shop By Categories</span>
 								<div class="icon-main-toggle navbar-toggle large--hide">
 									<i class="fa fa-caret-down" aria-hidden="true"></i>
 								</div>
@@ -215,22 +215,22 @@
 									<div class="tp-banner" >
 										<ul>
 											<li data-transition="boxslide"  data-masterspeed="2000" data-saveperformance="on"  data-title="Slideshow 1" >
-												<img src="{{asset('assets/images/scales-and-balances-all-brands.webp')}}" data-lazyload="{{asset('assets/images/scales-and-balances-all-brands.webp')}}"  alt="Slideshow 1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+												<img src="{{asset('assets/images/cellsmr-the-weighing-superstore-store.jpg')}}" data-lazyload="{{asset('assets/images/cellsmr-the-weighing-superstore-store.jpg')}}"  alt="Slideshow 1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 												<div class="tp-caption  easeOutBack" data-x='30' data-y='150'
 													data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
 													data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 													data-speed="2000" data-start="2000" data-easing="Back.easeInOut" data-endspeed="500" style="z-index: 6;visibility:hidden;">
-													<img src="./assets/images/slideshow1-caption.png" alt="Caption 1" />
+													{{-- <img src="./assets/images/slideshow1-caption.png" alt="Caption 1" /> --}}
 												</div>
 												<a class="slideshow-action-link" href="#"></a>
 											</li>
 											<li data-transition="slideright"  data-masterspeed="2000" data-saveperformance="on"  data-title="Slideshow 1" >
-												<img src="{{asset('assets/images/scales-and-balances-all-brands.webp')}}" data-lazyload="{{asset('assets/images/scales-and-balances-all-brands.webp')}}"  alt="Slideshow 1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+												<img src="{{asset('assets/images/store-cellsmr-the-weighing-superstore.jpg')}}" data-lazyload="{{asset('assets/images/store-cellsmr-the-weighing-superstore.jpg')}}"  alt="Slideshow 1" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 												<div class="tp-caption  easeOutBack" data-x='60' data-y='120'
 													data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
 													data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
 													data-speed="2000" data-start="2000" data-easing="Back.easeInOut" data-endspeed="500" style="z-index: 6;visibility:hidden;">
-													<img src="./assets/images/slideshow1-caption.png" alt="Caption 1" />
+													{{-- <img src="./assets/images/slideshow1-caption.png" alt="Caption 1" /> --}}
 												</div>
 												<a class="slideshow-action-link" href="#"></a>
 											</li>

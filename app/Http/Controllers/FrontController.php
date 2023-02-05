@@ -119,7 +119,10 @@ class FrontController extends Controller
         $productos = xcart_product::
         leftjoin('xcart_images_p', 'xcart_products.productid', '=', 'xcart_images_p.id')
         ->where('xcart_products.forsale', 'Y')
-        ->where('product', 'like', "%$buscar%")
+        ->where(function($query) use ($buscar) {
+            $query->where('product', 'like', "%$buscar%")
+                  ->orWhere('productcode', 'like', "%$buscar%");
+        })
         ->select('xcart_products.*', 'xcart_images_p.image_path')
         ->get();
 

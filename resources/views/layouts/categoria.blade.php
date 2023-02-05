@@ -7,7 +7,7 @@
 						<div class="wrap_allcoll">
 							<div id="html-section-home-vertical-menu" class="html-section index-section revolution-slider">
 								<div class="allcollections-title">
-									<span class="title">Categorias</span>
+									<span class="title">Shop By Categories</span>
 									<div class="icon-main-toggle navbar-toggle">
 										<i class="fa fa-caret-down" aria-hidden="true"></i>
 									</div>
@@ -211,7 +211,7 @@
 				<div class="wrap_allcoll grid__item small--one-whole">
 					<div id="html-section-home-vertical-menu" class="html-section index-section revolution-slider">
 								<div class="allcollections-title">
-									<span class="title">Categories</span>
+									<span class="title">Shop by Categories</span>
 									<div class="icon-main-toggle navbar-toggle">
 										<i class="fa fa-caret-down" aria-hidden="true"></i>
 									</div>

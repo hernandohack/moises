@@ -600,9 +600,9 @@
 				</div>
 			</div>
 		</header>
-        <div style="width: 100%; height: 50px; background-color: #191919;">
+        <div class="banner-discount">
             <ul>
-                <li style="width: 100%; position: absolute; z-index: 1001; overflow: visible; display: flex; justify-content: center; align-items: center; padding-top: 5px">
+                <li style="width: 100%; position: absolute; z-index: 1001; overflow: visible; display: flex; justify-content: center; align-items: center;">
                     <img src="{{asset('assets/images/big-discount_cellsmr.png')}}" alt="">
                 </li>
             </ul>

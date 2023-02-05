@@ -323,13 +323,13 @@ return [
         [
             'text' => 'Categorias',
             'route'  => 'categorias.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fa fa-th',
             'can'  => 'todo'
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'productos',
+            'route'  => 'productos.index',
+            'icon' => 'fa fa-square',
             'can'  => 'todo'
         ],
         [

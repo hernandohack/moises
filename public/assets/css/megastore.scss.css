@@ -6341,3 +6341,17 @@ body {
 .site-nav__item.site-nav__expanded-item.active a span{
 	font-weight:bold;
 }
+
+
+.banner-discount{
+    width: 100%; height: 64px; background-color: #e62e04;
+}
+
+@media (max-width: 600px) {
+
+    .banner-discount{
+        width: 100%; height: 22px; background-color: #e62e04;
+    }
+
+
+}

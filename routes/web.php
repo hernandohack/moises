@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,4 @@ Route::get('/files/master/pdf/{path}', function ($path) {
     })->where('path', '.*')->middleware('web');
 
 Route::resource('categoriaadmin', CategoriesController::class)->names('categorias');
+Route::resource('productoadmin', ProductController::class)->names('productos');
