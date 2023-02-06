@@ -1,101 +1,123 @@
 @extends('layouts.base')
 @section('body')
-		<nav class="menu-navigation">
-			<div class="navigation-bar menu-bar">
-				<div class="wrapper wrapper-allcoll">
-					<div class="innerpages-allcoll small--hide">
-						<div class="wrap_allcoll">
-							<div id="html-section-home-vertical-menu" class="html-section index-section revolution-slider">
-								<div class="allcollections-title">
-									<span class="title">Shop By Categories</span>
-									<div class="icon-main-toggle navbar-toggle">
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</div>
-								</div>
-								<div class="allcollections-content have-icon">
-									<ul class="sdcollections-list">
-                                        @foreach ( $categorias as $cat )
-                                        <li class="site-nav__item site-nav--has-dropdown dropdown megamenu-vertical megacol-3 dropdown-long" aria-haspopup="true">
-                                            <p class="site-nav__link">
-                                                {{-- <span class="site-nav__icon icon-1">
-                                                    <img src="./assets/images/cocktail-dress.png" alt="">
+    <nav class="menu-navigation">
+        <div class="navigation-bar menu-bar">
+            <div class="wrapper wrapper-allcoll">
+                <div class="innerpages-allcoll small--hide">
+                    <div class="wrap_allcoll">
+                        <div id="html-section-home-vertical-menu" class="html-section index-section revolution-slider">
+                            <div class="allcollections-title">
+                                <span class="title">Shop By Categories</span>
+                                <div class="icon-main-toggle navbar-toggle">
+                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="allcollections-content have-icon">
+                                <ul class="sdcollections-list">
+                                    @foreach ($categorias as $cat)
+                                        @if ($cat->category == '&nbsp;')
+                                            <li class="site-nav__item site-nav--has-dropdown dropdown megamenu-vertical megacol-3 dropdown-long"
+                                                aria-haspopup="true">
+                                                <p class="site-nav__link">
+                                                    {{-- <span class="site-nav__icon icon-1">
+                                                      <img src="./assets/images/cocktail-dress.png" alt="">
                                                     </span> --}}
-                                                <a href="{{route('categoria', $cat->slug)}} " class="site-nav__text">{{ $cat->category }}</a>
-                                                <span class="fa fa-caret-right click_arrow" aria-hidden="true"></span>
-                                            </p>
-                                        </li>
-                                        @endforeach
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="html-section-navigation" class="html-section">
-						<div data-section-id="navigation" data-section-type="horizontal-menu-section">
-							<div class="grid--full grid--table">
-								<div class="horizontal-menu desktop-menu medium-down--hide" style="">
-									<ul class="site-nav site-nav--init" id="AccessibleNav">
-										<li class="site-nav__item site-nav__expanded-item  active" data-url="/">
-											<a href="{{(route('index'))}}" class="site-nav__link">
-												<span>Home</span>
-											</a>
-										</li>
+                                                    <a href="{{ route('categoria', $cat->slug) }} "
+                                                        class="site-nav__text">{!! $cat->category !!}</a>
 
-										<li class="site-nav__item site-nav__expanded-item " data-url="/pages/contact-us">
-											<a href="https://aacells.com/pages/contact-us" class="site-nav__link" target="_blank">
-												<span>Contact Us</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-								<div class="horizontal-menu mobile-menu large--hide">
-									<div id="MobileNav" class="mobileNav-left">
-										<div class="mobileNav-header">
-											<div class="mobileNav-close">
-												<button type="button" class="icon-fallback-text mobileNav-icon-close">
-													<span class="icon icon-x" aria-hidden="true"></span>
-													<span class="fallback-text">Close menu</span>
-												</button>
-											</div>
-										</div>
-										<div class="mobileNav-menu">
-											<ul class="mobileNav-nav">
-												<li class="mobile-nav__item active" data-url="/">
-													<a href="{{(route('index'))}}" class="site-nav__link">
-														<span>Home</span>
-													</a>
-												</li>
-												<li class="mobile-nav__item mobile-nav__item-menulv1 mega-menu" data-father="none" data-url="/collections/all">
-													<div class="mobile-nav__has-sublist">
-														<a href="./collection.html" class="mobile-nav__link">Menu</a>
-														<div class="mobile-nav__toggle">
-															<button type="button" class="mobile-nav__toggle-btn icon-fallback-text mobileNav-menulv1-button">
-																<span class="icon-fallback-text mobile-nav__toggle-open">
-																	<span class="icon icon-plus" aria-hidden="true"></span>
-																	<span class="fallback-text">Expand submenu</span>
-																</span>
-																<span class="icon-fallback-text mobile-nav__toggle-close">
-																	<span class="icon icon-minus" aria-hidden="true"></span>
-																	<span class="fallback-text">Collapse submenu</span>
-																</span>
-															</button>
-														</div>
-													</div>
-													<ul class="mobile-nav__sublist mobile-nav__sublist-menulv1 megamenu__dropdown megamenu_1">
-														<li class="mobile-nav__item column-linklist grid__item small--one-whole medium-up--one-third one-fifth">
-															<ul>
-																@foreach ( $categorias as  $ca )
+                                                </p>
+                                            </li>
+                                        @else
+                                            <li class="site-nav__item site-nav--has-dropdown dropdown megamenu-vertical megacol-3 dropdown-long"
+                                                aria-haspopup="true">
+                                                <p class="site-nav__link">
+                                                    {{-- <span class="site-nav__icon icon-1">
+                                                      <img src="./assets/images/cocktail-dress.png" alt="">
+                                                    </span> --}}
+                                                    <a href="{{ route('categoria', $cat->slug) }} "
+                                                        class="site-nav__text">{{ $cat->category }}</a>
+                                                    <span class="fa fa-caret-right click_arrow" aria-hidden="true"></span>
+                                                </p>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="html-section-navigation" class="html-section">
+                    <div data-section-id="navigation" data-section-type="horizontal-menu-section">
+                        <div class="grid--full grid--table">
+                            <div class="horizontal-menu desktop-menu medium-down--hide" style="">
+                                <ul class="site-nav site-nav--init" id="AccessibleNav">
+                                    <li class="site-nav__item site-nav__expanded-item  active" data-url="/">
+                                        <a href="{{ route('index') }}" class="site-nav__link">
+                                            <span>Home</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="site-nav__item site-nav__expanded-item " data-url="/pages/contact-us">
+                                        <a href="https://aacells.com/pages/contact-us" class="site-nav__link"
+                                            target="_blank">
+                                            <span>Contact Us</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="horizontal-menu mobile-menu large--hide">
+                                <div id="MobileNav" class="mobileNav-left">
+                                    <div class="mobileNav-header">
+                                        <div class="mobileNav-close">
+                                            <button type="button" class="icon-fallback-text mobileNav-icon-close">
+                                                <span class="icon icon-x" aria-hidden="true"></span>
+                                                <span class="fallback-text">Close menu</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mobileNav-menu">
+                                        <ul class="mobileNav-nav">
+                                            <li class="mobile-nav__item active" data-url="/">
+                                                <a href="{{ route('index') }}" class="site-nav__link">
+                                                    <span>Home</span>
+                                                </a>
+                                            </li>
+                                            <li class="mobile-nav__item mobile-nav__item-menulv1 mega-menu"
+                                                data-father="none" data-url="/collections/all">
+                                                <div class="mobile-nav__has-sublist">
+                                                    <a href="./collection.html" class="mobile-nav__link">Menu</a>
+                                                    <div class="mobile-nav__toggle">
+                                                        <button type="button"
+                                                            class="mobile-nav__toggle-btn icon-fallback-text mobileNav-menulv1-button">
+                                                            <span class="icon-fallback-text mobile-nav__toggle-open">
+                                                                <span class="icon icon-plus" aria-hidden="true"></span>
+                                                                <span class="fallback-text">Expand submenu</span>
+                                                            </span>
+                                                            <span class="icon-fallback-text mobile-nav__toggle-close">
+                                                                <span class="icon icon-minus" aria-hidden="true"></span>
+                                                                <span class="fallback-text">Collapse submenu</span>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <ul
+                                                    class="mobile-nav__sublist mobile-nav__sublist-menulv1 megamenu__dropdown megamenu_1">
+                                                    <li
+                                                        class="mobile-nav__item column-linklist grid__item small--one-whole medium-up--one-third one-fifth">
+                                                        <ul>
+                                                            @foreach ($categorias as $ca)
                                                                 <li class="site-nav__item">
-																	<a href="{{route('categoria', $ca->slug)}}" class="site-nav__link">
-																		<span>{{$ca->category}}</span>
-																	</a>
-																</li>
-                                                                @endforeach
-															</ul>
-														</li>
-													</ul>
-												</li>
-												{{-- <li class="mobile-nav__item mobile-nav__item-menulv1 dropdown-menu" data-father="none" data-url="/collections/all">
+                                                                    <a href="{{ route('categoria', $ca->slug) }}"
+                                                                        class="site-nav__link">
+                                                                        <span>{{ $ca->category }}</span>
+                                                                    </a>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            {{-- <li class="mobile-nav__item mobile-nav__item-menulv1 dropdown-menu" data-father="none" data-url="/collections/all">
 													<div class="mobile-nav__has-sublist">
 														<a href="./page-about.html" class="mobile-nav__link">Pages</a>
 														<div class="mobile-nav__toggle">
@@ -184,113 +206,133 @@
 
 													</ul>
 												</li> --}}
-												<li class="mobile-nav__item" data-url="/pages/contact-us">
-													<a href="https://aacells.com/pages/contact-us" class="site-nav__link" target="_blank">
-														<span>Contact Us</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-										{{-- <div class="mobileNav-information">
+                                            <li class="mobile-nav__item" data-url="/pages/contact-us">
+                                                <a href="https://aacells.com/pages/contact-us" class="site-nav__link"
+                                                    target="_blank">
+                                                    <span>Contact Us</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {{-- <div class="mobileNav-information">
 											<div class="mobileNav__item nav-customerlink">
 												<a class="site-nav__link site-nav__link--icon js-login-modal" data-mfp-src="#LoginModal">
 													<span class="text">My Account</span>
 												</a>
 											</div>
 										</div> --}}
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<main class="main-content">
-			<div class="mobile-allcoll small--show large--hide">
-				<div class="wrap_allcoll grid__item small--one-whole">
-					<div id="html-section-home-vertical-menu" class="html-section index-section revolution-slider">
-								<div class="allcollections-title">
-									<span class="title">Shop by Categories</span>
-									<div class="icon-main-toggle navbar-toggle">
-										<i class="fa fa-caret-down" aria-hidden="true"></i>
-									</div>
-								</div>
-								<div class="allcollections-content have-icon">
-									<ul class="sdcollections-list">
-                                        @foreach ( $categorias as $cate )
-                                        <li class="site-nav__item site-nav--has-dropdown dropdown megamenu-vertical megacol-3 dropdown-long" aria-haspopup="true">
-                                            <p class="site-nav__link">
-                                                {{-- <span class="site-nav__icon icon-1">
-                                                    <img src="./assets/images/cocktail-dress.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="main-content">
+        <div class="mobile-allcoll small--show large--hide">
+            <div class="wrap_allcoll grid__item small--one-whole">
+                <div id="html-section-home-vertical-menu" class="html-section index-section revolution-slider">
+                    <div class="allcollections-title">
+                        <span class="title">Shop by Categories</span>
+                        <div class="icon-main-toggle navbar-toggle">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="allcollections-content have-icon">
+                        <ul class="sdcollections-list">
+                            @foreach ($categorias as $cate)
+                                @if ($cate->category == '&nbsp;')
+                                    <li class="site-nav__item site-nav--has-dropdown dropdown megamenu-vertical megacol-3 dropdown-long"
+                                        aria-haspopup="true">
+                                        <p class="site-nav__link">
+                                            {{-- <span class="site-nav__icon icon-1">
+                                                      <img src="./assets/images/cocktail-dress.png" alt="">
                                                     </span> --}}
-                                                <a href="{{route('categoria', $cate->slug)}} " class="site-nav__text">{{ $cate->category }}</a>
-                                                <span class="fa fa-caret-right click_arrow" aria-hidden="true"></span>
-                                            </p>
-                                        </li>
-                                        @endforeach
-									</ul>
-								</div>
-							</div>
-				</div>
-			</div>
-			<div id="html-section-collection-template" class="html-section">
-				<div id="CollectionSection" class="collection-left" data-section-id="collection-template" data-section-type="collection-template" data-grid-type="4">
-					<header class="section-header wrapper-breadcrumb">
-						<div class="wrapper">
-							<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-								{{-- <a href="/" title="Back to the frontpage">Home</a>
+                                            <a href="{{ route('categoria', $cate->slug) }} "
+                                                class="site-nav__text">{!! $cate->category !!}</a>
+
+                                        </p>
+                                    </li>
+                                @else
+                                    <li class="site-nav__item site-nav--has-dropdown dropdown megamenu-vertical megacol-3 dropdown-long"
+                                        aria-haspopup="true">
+                                        <p class="site-nav__link">
+                                            {{-- <span class="site-nav__icon icon-1">
+                                                      <img src="./assets/images/cocktail-dress.png" alt="">
+                                                    </span> --}}
+                                            <a href="{{ route('categoria', $cate->slug) }} "
+                                                class="site-nav__text">{{ $cate->category }}</a>
+                                            <span class="fa fa-caret-right click_arrow" aria-hidden="true"></span>
+                                        </p>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="html-section-collection-template" class="html-section">
+            <div id="CollectionSection" class="collection-left" data-section-id="collection-template"
+                data-section-type="collection-template" data-grid-type="4">
+                <header class="section-header wrapper-breadcrumb">
+                    <div class="wrapper">
+                        <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+                            {{-- <a href="/" title="Back to the frontpage">Home</a>
 								<span aria-hidden="true">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>
 								</span>
 								<span>Women’s Clothing</span> --}}
-							</nav>
-						</div>
-					</header>
-					<section id="collection_content">
-						<div class="wrapper">
-							<div class="grid--rev collayout-left" id="collection">
-								<div class="grid__item large--three-quarters">
-									<section class="section-image">
-										<img src="{{asset('assets/images/scales-balances-phone-USA.jpg')}}" alt="">
-										<div class="search-section searchslider_1542810603284">
-										</div>
-									</section>
-                                    <section>
-										{!!$categoria->description!!}
-									</section>
-									<section >
-                                        @foreach ($subcategorias as $sub )
-										<div class="categorias">
+                        </nav>
+                    </div>
+                </header>
+                <section id="collection_content">
+                    <div class="wrapper">
+                        <div class="grid--rev collayout-left" id="collection">
+                            <div class="grid__item large--three-quarters">
+                                <section class="section-image">
+                                    <img src="{{ asset('assets/images/scales-balances-phone-USA.jpg') }}" alt="">
+                                    <div class="search-section searchslider_1542810603284">
+                                    </div>
+                                </section>
+                                <section>
+                                    {!! $categoria->description !!}
+                                </section>
+                                <section>
+                                    @foreach ($subcategorias as $sub)
+                                        <div class="categorias">
 
-                                            <a href="{{ $sub->slug}}">
-                                                <img src="{{asset($sub->image_path)}}" alt="">
-                                                <p >{{$sub->category}}</p>
+                                            <a href="{{ $sub->slug }}">
+                                                <img src="{{ asset($sub->image_path) }}" alt="">
+                                                <p>{{ $sub->category }}</p>
                                             </a>
 
                                         </div>
-                                        @endforeach
-									</section>
-									<section class="collection-toolbar">
-										<div class="toolbar-left">
-											<h3 class="collection-title">{{$categoria->category}}</h3>
-										</div>
-										<div class="toolbar-right">
-											<div class="collection-view">
-												<button type="button" title="Grid view" class="grid-button change-view change-view--active" data-view="grid">
-													<span class="icon-fallback-text">
-														<span class="icon icon-grid-view" aria-hidden="true"></span>
-													<span class="fallback-text">Grid view</span>
-													</span>
-												</button>
-												<button type="button" title="List view" class="list-button change-view" data-view="list">
-													<span class="icon-fallback-text">
-														<span class="icon icon-list-view" aria-hidden="true"></span>
-													<span class="fallback-text">List view</span>
-													</span>
-												</button>
-											</div>
-											{{-- <div class="collection-sort">
+                                    @endforeach
+                                </section>
+                                <section class="collection-toolbar">
+                                    <div class="toolbar-left">
+                                        <h3 class="collection-title">{{ $categoria->category }}</h3>
+                                    </div>
+                                    <div class="toolbar-right">
+                                        <div class="collection-view">
+                                            <button type="button" title="Grid view"
+                                                class="grid-button change-view change-view--active" data-view="grid">
+                                                <span class="icon-fallback-text">
+                                                    <span class="icon icon-grid-view" aria-hidden="true"></span>
+                                                    <span class="fallback-text">Grid view</span>
+                                                </span>
+                                            </button>
+                                            <button type="button" title="List view" class="list-button change-view"
+                                                data-view="list">
+                                                <span class="icon-fallback-text">
+                                                    <span class="icon icon-list-view" aria-hidden="true"></span>
+                                                    <span class="fallback-text">List view</span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        {{-- <div class="collection-sort">
 												<label for="SortBy">Sort by</label>
 												<select name="SortBy" id="SortBy">
 													<option value="manual">Featured</option>
@@ -303,13 +345,13 @@
 													<option value="created-ascending">Date, old to new</option>
 												</select>
 											</div> --}}
-										</div>
-									</section>
-									<section class="products-area pull-vendor grid-uniform grid-uniform-category ">
-                                       @yield('productos')
-									</section>
-								</div>
-								{{-- <div class="grid__item large--one-quarter">
+                                    </div>
+                                </section>
+                                <section class="products-area pull-vendor grid-uniform grid-uniform-category ">
+                                    @yield('productos')
+                                </section>
+                            </div>
+                            {{-- <div class="grid__item large--one-quarter">
 									<div class="group_sidebar">
 										<div class="sb-wrapper link-collections-wrapper clearfix" data-animate="" data-delay="0">
 											<h6 class="sb-title no-icon">
@@ -773,12 +815,12 @@
 										</div>
 									</div>
 								</div> --}}
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-		</main>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
 
 
 @stop

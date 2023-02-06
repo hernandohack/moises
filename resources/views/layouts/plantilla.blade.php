@@ -194,6 +194,20 @@
 							<div class="allcollections-content have-icon">
 								<ul class="sdcollections-list">
                                     @foreach ( $categorias as $categoria )
+
+                                    @if ($categoria->category == '&nbsp;')
+
+                                    <li class="site-nav__item site-nav--has-dropdown dropdown megamenu-vertical megacol-3 dropdown-long" aria-haspopup="true">
+										<p class="site-nav__link">
+											{{-- <span class="site-nav__icon icon-1">
+												  <img src="./assets/images/cocktail-dress.png" alt="">
+												</span> --}}
+											<a href="{{route('categoria', $categoria->slug)}} " class="site-nav__text">{!! $categoria->category !!}</a>
+											
+										</p>
+                                    </li>
+
+                                    @else
                                     <li class="site-nav__item site-nav--has-dropdown dropdown megamenu-vertical megacol-3 dropdown-long" aria-haspopup="true">
 										<p class="site-nav__link">
 											{{-- <span class="site-nav__icon icon-1">
@@ -203,6 +217,9 @@
 											<span class="fa fa-caret-right click_arrow" aria-hidden="true"></span>
 										</p>
                                     </li>
+
+                                    @endif
+
                                     @endforeach
 								</ul>
 							</div>
@@ -274,18 +291,18 @@
 						<div id="html-section-home-topbanners" class="html-section index-section index-section--flush">
 							<div class="banners-box">
 								<div class="banner-element banner-1" style="text-align: center;">
-									<a href="#">
-										<img src="{{asset('assets/images/load_cells-weight.png')}}" alt="" style="width:180px;">
+									<a href="https://aacells.com/pages/contact-us" target="_blank">
+										<img src="{{asset('assets/images/support-scales.jpg')}}" alt="">
 									</a>
 								</div>
 								<div class="banner-element banner-2" style="text-align: center;">
-									<a href="#">
-										<img src="{{asset('assets/images/tanks-hopper-price_58e1e8ed-8510-40d2-bb56-1c3d68d31d18.avif')}}" alt="" style="width:180px;">
+									<a href="{{route('producto', 'sentronik-7140tm-tank-weigh-mounting-100lb-5klb-20klb.html')}}">
+										<img src="{{asset('assets/images/tanks-hopper-price_58e1e8ed-8510-40d2-bb56-1c3d68d31d18.avif')}}" alt="">
 									</a>
 								</div>
 								<div class="banner-element banner-3" style="text-align: center;">
-									<a href="#">
-										<img src="{{asset('assets/images/farm-kit-offer-price.jpg')}}" alt="" style="width:180px;">
+									<a href="{{route('categoria', 'shear-beam-load-cells')}}">
+										<img src="{{asset('assets/images/farm-kit-offer-price.jpg')}}" alt="">
 									</a>
 								</div>
 							</div>
@@ -302,7 +319,7 @@
 						<div class="banners-box">
 							<div class="grid banners-section ">
 								<div class="banner-element banner-1 grid__item  captionposition-left">
-									<a href="#">
+									<a href="{{route('categoria', 'sentronik-load-cells-scales-and-balances')}}">
 										<img src="{{asset('assets/images/sentronik_load_cells_price_1920x.webp')}}" alt="">
 									</a>
 								</div>
@@ -364,12 +381,12 @@
 								<div class="product-grid-random product-grid-1539877863095">
 
                                 @foreach ( $ramdomproducts as  $random)
-                                <div class="grid__item small--one-half medium-up--one-quarter one-fifth shuffle-element loadmore_element" >
+                                <div class="grid__item small--one-half medium-up--one-quarter one-fifth shuffle-element loadmore_element"  >
                                     <div class="grid-view-item">
                                         <div class="grid-normal-display">
                                             <div class="grid__image product-image">
                                                 <a class="grid-view-item__link" href="{{route('producto', $random->slug)}}">
-                                                    <img class="grid-view-item__image" src="{{asset($random->image_path)}}" alt="{{$random->slug}}">
+                                                    <img class="grid-view-item__image" src="{{asset($random->image_path)}}" alt="{{$random->slug}}" style="max-height: 150px; min-height: 100px">
                                                     <img class="hover-image" src="{{asset($random->image_path)}}" alt="{{$random->product}}" title="{{$random->slug}}">
                                                 </a>
 
