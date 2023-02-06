@@ -203,7 +203,7 @@
 												  <img src="./assets/images/cocktail-dress.png" alt="">
 												</span> --}}
 											<a href="{{route('categoria', $categoria->slug)}} " class="site-nav__text">{!! $categoria->category !!}</a>
-											
+
 										</p>
                                     </li>
 
@@ -224,6 +224,7 @@
 								</ul>
 							</div>
 						</div>
+
 					</div>
 					<div class="wrap_main_slideshow grid__item large--two-quarters">
 						<div id="html-section-home-revolution" class="html-section index-section revolution-slider">
@@ -260,27 +261,27 @@
 						<div class="brand-area">
 							<div class="brandslider home-brandslider">
 								<div class="brand-elemet">
-									<a href="#">
+									<a href="{{route('categoria', 'artech-celdas')}}">
 										<img src="{{asset('assets/images/artech_scalemarket_load_cells.avif')}}" alt="">
 									</a>
 								</div>
 								<div class="brand-elemet">
-									<a href="#">
+									<a href="{{route('categoria', 'revere-transducers-load-cells-scales-and-balances')}}">
 										<img src="{{asset('assets/images/revere-transducers-load-cells-scalemarket.avif')}}" alt="">
 									</a>
 								</div>
 								<div class="brand-elemet">
-									<a href="#">
+									<a href="{{route('categoria', 'anyload-celda-de-carga')}}">
 										<img src="{{asset('assets/images/anyload.avif')}}" alt="">
 									</a>
 								</div>
 								<div class="brand-elemet">
-									<a href="#">
+									<a href="{{route('categoria', 'rice-lake-scales-balances-load-cells-indicators')}}">
 										<img src="{{asset('assets/images/rice_lake_scalemarket.avif')}}" alt="">
 									</a>
 								</div>
 								<div class="brand-elemet">
-									<a href="#">
+									<a href="{{route('categoria', 'dillon-digital-force-gauges-and-load-cells')}}">
 										<img src="{{asset('assets/images/dillon_force_scalemarket.avif')}}" alt="">
 									</a>
 								</div>
@@ -290,7 +291,7 @@
 					<div class="wrap_banner grid__item large--one-quarter">
 						<div id="html-section-home-topbanners" class="html-section index-section index-section--flush">
 							<div class="banners-box">
-								<div class="banner-element banner-1" style="text-align: center;">
+                                <div class="banner-element banner-1" style="text-align: center;">
 									<a href="https://aacells.com/pages/contact-us" target="_blank">
 										<img src="{{asset('assets/images/support-scales.jpg')}}" alt="">
 									</a>
@@ -311,9 +312,6 @@
 				</div>
 			</div>
 			<div class="index-sections">
-
-
-
 				<div id="html-section-1542812906653" class="html-section index-section index-section--flush">
 					<div class="wrapper">
 						<div class="banners-box">

@@ -658,7 +658,7 @@
                             </div>
                             <div class="text grid__item one-whole">
                                 <div class="text1">CONTACT US</div>
-                                <div class="text2">Phone:+1(305) 918 9153 <br> +1(305) 572 8228, <br>
+                                <div class="text2"> <a href="tel:+13059189153"> Phone:+1(305) 918 9153  <br> +1(305) 572 8228, </a><br>
                                     Contact us Mail: cs@skytektglobal.com miami@skytekglobal.com</div>
                             </div>
                         </div>
